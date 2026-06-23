@@ -26,7 +26,7 @@ export const cartes: CarteComparaison[] = [
     banqueId: 'attijariwafa-bank', banqueNom: 'Attijariwafa Bank', nom: 'Visa Classique', type: 'classique',
     cotisation: 80, plafondRetraitJour: 5000, plafondPaiementMois: 20000, plafondRetraitEtranger: 3000, plafondPaiementEtranger: 10000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: false,
-    description: 'Carte de base pour les operations quotidiennes au Maroc.',
+    description: 'Carte de base pour les opérations quotidiennes au Maroc.',
   },
   {
     banqueId: 'attijariwafa-bank', banqueNom: 'Attijariwafa Bank', nom: 'Visa Gold', type: 'gold',
@@ -52,19 +52,19 @@ export const cartes: CarteComparaison[] = [
     banqueId: 'banque-populaire', banqueNom: 'Banque Populaire', nom: 'Chaabi Classique', type: 'classique',
     cotisation: 60, plafondRetraitJour: 5000, plafondPaiementMois: 15000, plafondRetraitEtranger: 2000, plafondPaiementEtranger: 8000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: false,
-    description: 'Carte Chaabi economique pour les operations courantes.',
+    description: 'Carte Chaabi économique pour les opérations courantes.',
   },
   {
     banqueId: 'banque-populaire', banqueNom: 'Banque Populaire', nom: 'Chaabi Gold', type: 'gold',
     cotisation: 300, plafondRetraitJour: 10000, plafondPaiementMois: 40000, plafondRetraitEtranger: 7000, plafondPaiementEtranger: 25000,
     assuranceVoyage: true, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: true,
-    description: 'Carte Gold avec assurance voyage pour les deplacement internationaux.',
+    description: 'Carte Gold avec assurance voyage pour les déplacements internationaux.',
   },
   {
     banqueId: 'banque-populaire', banqueNom: 'Banque Populaire', nom: 'Chaabi Platinum', type: 'platinum',
     cotisation: 800, plafondRetraitJour: 20000, plafondPaiementMois: 80000, plafondRetraitEtranger: 12000, plafondPaiementEtranger: 60000,
     assuranceVoyage: true, assuranceAchat: true, cashback: false, cashbackTaux: 0, miles: false, conciergerie: true, sansContact: true, paiementMobile: true, international: true,
-    description: 'Carte premium avec conciergerie et assurances etendues.',
+    description: 'Carte premium avec conciergerie et assurances étendues.',
   },
   {
     banqueId: 'banque-populaire', banqueNom: 'Banque Populaire', nom: 'Chaabi Infinite', type: 'infinite',
@@ -78,7 +78,7 @@ export const cartes: CarteComparaison[] = [
     banqueId: 'bmce-bank-of-africa', banqueNom: 'Bank of Africa', nom: 'Visa Classic', type: 'classique',
     cotisation: 90, plafondRetraitJour: 5000, plafondPaiementMois: 20000, plafondRetraitEtranger: 3000, plafondPaiementEtranger: 10000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: false,
-    description: 'Carte classique pour les operations quotidiennes.',
+    description: 'Carte classique pour les opérations quotidiennes.',
   },
   {
     banqueId: 'bmce-bank-of-africa', banqueNom: 'Bank of Africa', nom: 'Visa Gold', type: 'gold',
@@ -104,19 +104,19 @@ export const cartes: CarteComparaison[] = [
     banqueId: 'cih-bank', banqueNom: 'CIH Bank', nom: 'Visa Classique', type: 'classique',
     cotisation: 0, plafondRetraitJour: 5000, plafondPaiementMois: 20000, plafondRetraitEtranger: 3000, plafondPaiementEtranger: 10000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: false,
-    description: 'Carte classique 100% gratuite, la seule du marche.',
+    description: 'Carte classique 100% gratuite, la seule du marché.',
   },
   {
     banqueId: 'cih-bank', banqueNom: 'CIH Bank', nom: 'Visa Gold', type: 'gold',
     cotisation: 250, plafondRetraitJour: 10000, plafondPaiementMois: 50000, plafondRetraitEtranger: 7000, plafondPaiementEtranger: 30000,
     assuranceVoyage: true, assuranceAchat: true, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: true,
-    description: 'Carte Gold a tarif competitif avec assurances incluses.',
+    description: 'Carte Gold à tarif compétitif avec assurances incluses.',
   },
   {
     banqueId: 'cih-bank', banqueNom: 'CIH Bank', nom: 'Visa Platinum', type: 'platinum',
     cotisation: 600, plafondRetraitJour: 20000, plafondPaiementMois: 100000, plafondRetraitEtranger: 15000, plafondPaiementEtranger: 80000,
     assuranceVoyage: true, assuranceAchat: true, cashback: true, cashbackTaux: 0.5, miles: false, conciergerie: true, sansContact: true, paiementMobile: true, international: true,
-    description: 'Carte Platinum au meilleur rapport qualite-prix du marche.',
+    description: 'Carte Platinum au meilleur rapport qualité-prix du marché.',
   },
   {
     banqueId: 'cih-bank', banqueNom: 'CIH Bank', nom: 'Visa Infinite', type: 'infinite',
@@ -127,25 +127,25 @@ export const cartes: CarteComparaison[] = [
 
   // Societe Generale
   {
-    banqueId: 'societe-generale-maroc', banqueNom: 'Societe Generale', nom: 'Visa Classique', type: 'classique',
+    banqueId: 'societe-generale-maroc', banqueNom: 'Société Générale', nom: 'Visa Classique', type: 'classique',
     cotisation: 100, plafondRetraitJour: 5000, plafondPaiementMois: 20000, plafondRetraitEtranger: 3000, plafondPaiementEtranger: 10000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: false,
-    description: 'Carte classique SG pour les operations courantes.',
+    description: 'Carte classique SG pour les opérations courantes.',
   },
   {
-    banqueId: 'societe-generale-maroc', banqueNom: 'Societe Generale', nom: 'Visa Gold', type: 'gold',
+    banqueId: 'societe-generale-maroc', banqueNom: 'Société Générale', nom: 'Visa Gold', type: 'gold',
     cotisation: 450, plafondRetraitJour: 12000, plafondPaiementMois: 60000, plafondRetraitEtranger: 10000, plafondPaiementEtranger: 40000,
     assuranceVoyage: true, assuranceAchat: true, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: true,
-    description: 'Carte Gold premium avec assurances completes.',
+    description: 'Carte Gold premium avec assurances complètes.',
   },
   {
-    banqueId: 'societe-generale-maroc', banqueNom: 'Societe Generale', nom: 'Visa Platinum', type: 'platinum',
+    banqueId: 'societe-generale-maroc', banqueNom: 'Société Générale', nom: 'Visa Platinum', type: 'platinum',
     cotisation: 1200, plafondRetraitJour: 25000, plafondPaiementMois: 120000, plafondRetraitEtranger: 20000, plafondPaiementEtranger: 80000,
     assuranceVoyage: true, assuranceAchat: true, cashback: true, cashbackTaux: 0.5, miles: false, conciergerie: true, sansContact: true, paiementMobile: true, international: true,
     description: 'Carte Platinum haut de gamme avec conciergerie.',
   },
   {
-    banqueId: 'societe-generale-maroc', banqueNom: 'Societe Generale', nom: 'Visa Infinite', type: 'infinite',
+    banqueId: 'societe-generale-maroc', banqueNom: 'Société Générale', nom: 'Visa Infinite', type: 'infinite',
     cotisation: 3500, plafondRetraitJour: 50000, plafondPaiementMois: 300000, plafondRetraitEtranger: 40000, plafondPaiementEtranger: 200000,
     assuranceVoyage: true, assuranceAchat: true, cashback: true, cashbackTaux: 1.0, miles: true, conciergerie: true, sansContact: true, paiementMobile: true, international: true,
     description: 'Carte ultra-premium avec tous les services exclusifs SG.',
@@ -179,19 +179,19 @@ export const cartes: CarteComparaison[] = [
 
   // CAM
   {
-    banqueId: 'credit-agricole-maroc', banqueNom: 'Credit Agricole', nom: 'Carte Classique', type: 'classique',
+    banqueId: 'credit-agricole-maroc', banqueNom: 'Crédit Agricole', nom: 'Carte Classique', type: 'classique',
     cotisation: 50, plafondRetraitJour: 4000, plafondPaiementMois: 15000, plafondRetraitEtranger: 2000, plafondPaiementEtranger: 8000,
     assuranceVoyage: false, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: false, international: false,
-    description: 'Carte de base economique du Credit Agricole.',
+    description: 'Carte de base économique du Crédit Agricole.',
   },
   {
-    banqueId: 'credit-agricole-maroc', banqueNom: 'Credit Agricole', nom: 'Carte Gold', type: 'gold',
+    banqueId: 'credit-agricole-maroc', banqueNom: 'Crédit Agricole', nom: 'Carte Gold', type: 'gold',
     cotisation: 280, plafondRetraitJour: 8000, plafondPaiementMois: 35000, plafondRetraitEtranger: 6000, plafondPaiementEtranger: 20000,
     assuranceVoyage: true, assuranceAchat: false, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: true,
     description: 'Carte Gold avec assurance voyage basique.',
   },
   {
-    banqueId: 'credit-agricole-maroc', banqueNom: 'Credit Agricole', nom: 'Carte Platinum', type: 'platinum',
+    banqueId: 'credit-agricole-maroc', banqueNom: 'Crédit Agricole', nom: 'Carte Platinum', type: 'platinum',
     cotisation: 700, plafondRetraitJour: 15000, plafondPaiementMois: 70000, plafondRetraitEtranger: 10000, plafondPaiementEtranger: 50000,
     assuranceVoyage: true, assuranceAchat: true, cashback: false, cashbackTaux: 0, miles: false, conciergerie: false, sansContact: true, paiementMobile: true, international: true,
     description: 'Carte premium du Credit Agricole.',
