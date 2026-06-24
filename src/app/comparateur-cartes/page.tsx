@@ -4,8 +4,8 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 import ComparateurCartes from '@/components/comparateur/ComparateurCartes';
 
 export const metadata: Metadata = {
-  title: 'Comparateur cartes bancaires Maroc 2025 - Tarifs',
-  description: 'Comparez les cartes bancaires au Maroc : Visa, Mastercard, classique, Gold, Platinum, Infinite. Cotisations, plafonds et avantages.',
+  title: 'Comparateur cartes bancaires Maroc 2026 - Tarifs et plafonds comparés',
+  description: 'Comparez toutes les cartes bancaires au Maroc en 2026 : Visa, Mastercard, classique, Gold, Platinum et Infinite. Cotisations annuelles, plafonds de retrait et paiement, assurances voyage et cashback comparés par banque.',
   alternates: { canonical: `${SITE.url}/comparateur-cartes/` },
 };
 
@@ -41,43 +41,43 @@ export default function ComparateurCartesPage() {
         <div className="mt-12 prose max-w-4xl">
           <h2>Guide des cartes bancaires au Maroc</h2>
           <p>
-            Les cartes bancaires au Maroc se d\u00e9clinent en quatre niveaux principaux, chacun correspondant \u00e0 un
-            profil et des besoins diff\u00e9rents. La plupart des banques marocaines proposent des cartes Visa, tandis
+            Les cartes bancaires au Maroc se déclinent en quatre niveaux principaux, chacun correspondant à un
+            profil et des besoins différents. La plupart des banques marocaines proposent des cartes Visa, tandis
             que certaines offrent aussi des cartes Mastercard.
           </p>
 
           <h3>Carte Classique (0-100 DH/an)</h3>
           <p>
-            La carte d&apos;entr\u00e9e de gamme, suffisante pour une utilisation quotidienne au Maroc. Elle permet les
-            retraits aux GAB, les paiements chez les commer\u00e7ants et les achats en ligne. Les plafonds sont
-            g\u00e9n\u00e9ralement de 5 000 DH/jour en retrait et 15 000-20 000 DH/mois en paiement. Bonne nouvelle :
-            CIH Bank, CFG Bank et Al Barid Bank proposent une carte classique enti\u00e8rement gratuite.
+            La carte d&apos;entrée de gamme, suffisante pour une utilisation quotidienne au Maroc. Elle permet les
+            retraits aux GAB, les paiements chez les commerçants et les achats en ligne. Les plafonds sont
+            généralement de 5 000 DH/jour en retrait et 15 000-20 000 DH/mois en paiement. Bonne nouvelle :
+            CIH Bank, CFG Bank et Al Barid Bank proposent une carte classique entièrement gratuite.
           </p>
 
           <h3>Carte Gold (200-500 DH/an)</h3>
           <p>
-            Recommand\u00e9e pour les personnes voyageant r\u00e9guli\u00e8rement. La carte Gold offre des plafonds plus \u00e9lev\u00e9s,
+            Recommandée pour les personnes voyageant régulièrement. La carte Gold offre des plafonds plus élevés,
             une assurance voyage (rapatriement, bagages) et une utilisation internationale confortable. Les
-            plafonds montent \u00e0 10 000-15 000 DH/jour en retrait.
+            plafonds montent à 10 000-15 000 DH/jour en retrait.
           </p>
 
           <h3>Carte Platinum (600-1 500 DH/an)</h3>
           <p>
-            Destin\u00e9e aux cadres et professions lib\u00e9rales, la carte Platinum ajoute le cashback sur certains achats,
-            une protection des achats \u00e9tendue et un service de conciergerie. Les plafonds atteignent
+            Destinée aux cadres et professions libérales, la carte Platinum ajoute le cashback sur certains achats,
+            une protection des achats étendue et un service de conciergerie. Les plafonds atteignent
             20 000-30 000 DH/jour en retrait et 100 000-150 000 DH/mois en paiement.
           </p>
 
           <h3>Carte Infinite / World Elite (2 000-5 000 DH/an)</h3>
           <p>
-            Le segment ultra-premium avec les plafonds les plus \u00e9lev\u00e9s, des miles a\u00e9riens, une conciergerie 24/7,
-            des assurances compl\u00e8tes et un acc\u00e8s aux lounges d&apos;a\u00e9roport. La carte World Elite de la BMCI est
-            la plus ch\u00e8re du march\u00e9 (5 000 DH/an) mais aussi la plus exclusive.
+            Le segment ultra-premium avec les plafonds les plus élevés, des miles aériens, une conciergerie 24/7,
+            des assurances complètes et un accès aux lounges d&apos;aéroport. La carte World Elite de la BMCI est
+            la plus chère du marché (5 000 DH/an) mais aussi la plus exclusive.
           </p>
         </div>
 
         <p className="mt-6 text-sm text-gray-500 italic">
-          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis \u00e0 jour en 2025
+          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis à jour en 2026
         </p>
       </div>
     </>

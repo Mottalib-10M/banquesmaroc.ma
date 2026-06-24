@@ -102,15 +102,15 @@ export default function SimulateurCredit({
       {/* Inputs */}
       <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
         <h3 className="text-lg font-bold text-charcoal mb-4">
-          Param\u00e8tres du {type === 'immobilier' ? 'cr\u00e9dit immobilier' : 'cr\u00e9dit \u00e0 la consommation'}
+          Paramètres du {type === 'immobilier' ? 'crédit immobilier' : 'crédit à la consommation'}
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ChampMontant
-            label="Montant du cr\u00e9dit"
+            label="Montant du crédit"
             value={montantStr}
             onChange={setMontantStr}
-            aide={type === 'immobilier' ? 'Montant emprunt\u00e9 apr\u00e8s apport personnel' : 'Montant du cr\u00e9dit souhait\u00e9'}
+            aide={type === 'immobilier' ? 'Montant emprunté après apport personnel' : 'Montant du crédit souhaité'}
           />
 
           <div className="mb-4">
@@ -125,7 +125,7 @@ export default function SimulateurCredit({
               <option value="">Choisir une banque...</option>
               {banques.map((b) => (
                 <option key={b.id} value={b.id}>
-                  {b.nomCourt} - Taux d\u00e8s {formatPourcent(type === 'immobilier' ? b.tauxCredit.immobilier.min : b.tauxCredit.conso.min)}
+                  {b.nomCourt} - Taux dès {formatPourcent(type === 'immobilier' ? b.tauxCredit.immobilier.min : b.tauxCredit.conso.min)}
                 </option>
               ))}
             </select>
@@ -135,7 +135,7 @@ export default function SimulateurCredit({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="mb-4">
             <label className="block text-sm font-medium text-charcoal mb-1">
-              Dur\u00e9e : {dureeAns} an{dureeAns > 1 ? 's' : ''} ({dureeMois} mois)
+              Durée : {dureeAns} an{dureeAns > 1 ? 's' : ''} ({dureeMois} mois)
             </label>
             <input
               type="range"
@@ -207,20 +207,20 @@ export default function SimulateurCredit({
       {/* Resultats */}
       {montant > 0 && taux > 0 && (
         <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
-          <h3 className="text-lg font-bold text-charcoal mb-4">R\u00e9sultats de la simulation</h3>
+          <h3 className="text-lg font-bold text-charcoal mb-4">Résultats de la simulation</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <ResultCard
-              label="Mensualit\u00e9"
+              label="Mensualité"
               value={formatDH(resultat.mensualite)}
               highlight
             />
             <ResultCard
-              label="Co\u00fbt total du cr\u00e9dit"
+              label="Coût total du crédit"
               value={formatDH(resultat.coutTotal)}
             />
             <ResultCard
-              label="Co\u00fbt des int\u00e9r\u00eats"
+              label="Coût des intérêts"
               value={formatDH(resultat.coutInterets)}
               sub={`${((resultat.coutInterets / montant) * 100).toFixed(1).replace('.', ',')}% du capital`}
             />
@@ -236,9 +236,9 @@ export default function SimulateurCredit({
                     <tr className="bg-light-gray">
                       <th className="text-left px-4 py-2 font-semibold">Banque</th>
                       <th className="text-right px-4 py-2 font-semibold">Taux</th>
-                      <th className="text-right px-4 py-2 font-semibold">Mensualit\u00e9</th>
-                      <th className="text-right px-4 py-2 font-semibold">Co\u00fbt total</th>
-                      <th className="text-right px-4 py-2 font-semibold">\u00c9conomie</th>
+                      <th className="text-right px-4 py-2 font-semibold">Mensualité</th>
+                      <th className="text-right px-4 py-2 font-semibold">Coût total</th>
+                      <th className="text-right px-4 py-2 font-semibold">Économie</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">
@@ -277,7 +277,7 @@ export default function SimulateurCredit({
           {/* Chart */}
           {chartData.length > 0 && (
             <div className="mb-6">
-              <h4 className="font-semibold text-charcoal mb-3">\u00c9volution capital / int\u00e9r\u00eats par ann\u00e9e</h4>
+              <h4 className="font-semibold text-charcoal mb-3">Évolution capital / intérêts par année</h4>
               <div className="h-72">
                 <AmortissementChart data={chartData} />
               </div>
@@ -302,10 +302,10 @@ export default function SimulateurCredit({
                   <thead className="sticky top-0 bg-white">
                     <tr className="bg-light-gray">
                       <th className="px-3 py-2 text-left">Mois</th>
-                      <th className="px-3 py-2 text-right">Mensualit\u00e9</th>
+                      <th className="px-3 py-2 text-right">Mensualité</th>
                       <th className="px-3 py-2 text-right">Capital</th>
-                      <th className="px-3 py-2 text-right">Int\u00e9r\u00eats</th>
-                      <th className="px-3 py-2 text-right">Restant d\u00fb</th>
+                      <th className="px-3 py-2 text-right">Intérêts</th>
+                      <th className="px-3 py-2 text-right">Restant dû</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-100">

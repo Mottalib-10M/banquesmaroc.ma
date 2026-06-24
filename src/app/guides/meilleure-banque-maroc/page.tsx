@@ -3,15 +3,17 @@ import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Meilleure banque au Maroc 2025 - Comparatif complet',
-  description: 'Quelle est la meilleure banque au Maroc en 2025 ? Comparatif AWB, BP, CIH, BOA, SG, BMCI, CFG, CAM et Al Barid Bank.',
+  title: 'Meilleure banque au Maroc 2026 - Comparatif complet des 9 banques marocaines',
+  description: 'Quelle est la meilleure banque au Maroc en 2026 ? Comparatif détaillé de AWB, Banque Populaire, CIH, BOA, Société Générale, BMCI, CFG, Crédit Agricole et Al Barid Bank avec notes et avis.',
   alternates: { canonical: `${SITE.url}/guides/meilleure-banque-maroc/` },
 };
 
 const faqData = [
-  { question: 'Quelle banque a le plus grand r\u00e9seau au Maroc ?', answer: 'Attijariwafa Bank avec 4 800 agences, suivie de la Banque Populaire avec 4 600 agences.' },
-  { question: 'Quelle banque est la moins ch\u00e8re au Maroc ?', answer: 'CIH Bank, CFG Bank et Al Barid Bank offrent les tarifs les plus bas avec des cartes gratuites et des comptes sans frais.' },
+  { question: 'Quelle banque a le plus grand réseau au Maroc ?', answer: 'Attijariwafa Bank avec 4 800 agences, suivie de la Banque Populaire avec 4 600 agences.' },
+  { question: 'Quelle banque est la moins chère au Maroc ?', answer: 'CIH Bank, CFG Bank et Al Barid Bank offrent les tarifs les plus bas avec des cartes gratuites et des comptes sans frais.' },
   { question: 'Quelle banque pour les jeunes au Maroc ?', answer: 'CIH Bank avec son offre Code 30 (tout gratuit pour les moins de 30 ans) est la meilleure option pour les jeunes.' },
+  { question: 'Quelle banque choisir pour un crédit immobilier au Maroc ?', answer: 'CIH Bank et CFG Bank proposent les taux les plus bas (dès 4,5%). Pour les gros projets nécessitant un accompagnement en agence, Attijariwafa Bank et la Banque Populaire offrent un suivi personnalisé grâce à leur vaste réseau.' },
+  { question: 'Quelle est la meilleure banque en ligne au Maroc ?', answer: 'CIH Bank est considérée comme la banque la plus digitale du Maroc avec une application mobile très performante, l\'ouverture de compte en ligne et des services 100% dématérialisés. CFG Bank propose également une expérience digitale moderne.' },
 ];
 
 export default function MeilleureBanqueMarocPage() {
@@ -21,11 +23,11 @@ export default function MeilleureBanqueMarocPage() {
     { name: 'Meilleure banque Maroc', url: `${SITE.url}/guides/meilleure-banque-maroc/` },
   ]);
   const articleSchema = buildArticleSchema(
-    'Meilleure banque au Maroc en 2025 : comparatif complet',
-    'Guide comparatif des meilleures banques marocaines en 2025',
+    'Meilleure banque au Maroc en 2026 : comparatif complet',
+    'Guide comparatif des meilleures banques marocaines en 2026',
     `${SITE.url}/guides/meilleure-banque-maroc/`,
     '2025-01-15',
-    '2025-06-01'
+    '2026-06-01'
   );
   const faqSchema = buildFAQSchema(faqData);
 
@@ -46,130 +48,130 @@ export default function MeilleureBanqueMarocPage() {
 
         <header className="mb-8">
           <h1 className="text-2xl sm:text-3xl font-bold text-charcoal mb-3">
-            Meilleure banque au Maroc en 2025 : le comparatif complet
+            Meilleure banque au Maroc en 2026 : le comparatif complet
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Par {SITE.author} ({SITE.authorCredentials})</span>
-            <span>Mis \u00e0 jour le 1er juin 2025</span>
+            <span>Mis à jour le 1er juin 2026</span>
           </div>
         </header>
 
         <div className="prose max-w-none">
           <p>
-            Choisir sa banque au Maroc est une d\u00e9cision qui vous accompagnera pendant de longues ann\u00e9es. Avec 9 banques de d\u00e9tail principales, le march\u00e9 bancaire marocain offre un large \u00e9ventail de choix. Dans ce guide complet, nous analysons en d\u00e9tail chaque banque pour vous aider \u00e0 faire le meilleur choix selon votre profil et vos besoins.
+            Choisir sa banque au Maroc est une décision qui vous accompagnera pendant de longues années. Avec 9 banques de détail principales, le marché bancaire marocain offre un large éventail de choix. Dans ce guide complet, nous analysons en détail chaque banque pour vous aider à faire le meilleur choix selon votre profil et vos besoins.
           </p>
 
-          <h2>Notre classement des banques marocaines en 2025</h2>
+          <h2>Notre classement des banques marocaines en 2026</h2>
           <p>
-            Apr\u00e8s une analyse approfondie des tarifs, des taux, des services digitaux et de la satisfaction client, voici notre classement. Nous avons \u00e9valu\u00e9 chaque banque sur cinq crit\u00e8res pond\u00e9r\u00e9s : comp\u00e9titivit\u00e9 des taux (30%), frais bancaires (20%), digital (20%), r\u00e9seau (15%) et satisfaction client (15%).
+            Après une analyse approfondie des tarifs, des taux, des services digitaux et de la satisfaction client, voici notre classement. Nous avons évalué chaque banque sur cinq critères pondérés : compétitivité des taux (30%), frais bancaires (20%), digital (20%), réseau (15%) et satisfaction client (15%).
           </p>
 
           <h3>1. CIH Bank - Note : 8,8/10</h3>
           <p>
-            CIH Bank se hisse en t\u00eate de notre classement gr\u00e2ce \u00e0 un positionnement unique sur le march\u00e9 marocain. L&apos;ancienne banque immobili\u00e8re a r\u00e9ussi sa transformation en banque universelle digitale de r\u00e9f\u00e9rence. Sa carte classique gratuite, ses taux immobiliers les plus bas du march\u00e9 (d\u00e8s 4,5%) et son offre Code 30 pour les jeunes en font un choix imbattable pour la majorit\u00e9 des Marocains.
+            CIH Bank se hisse en tête de notre classement grâce à un positionnement unique sur le marché marocain. L&apos;ancienne banque immobilière a réussi sa transformation en banque universelle digitale de référence. Sa carte classique gratuite, ses taux immobiliers les plus bas du marché (dès 4,5%) et son offre Code 30 pour les jeunes en font un choix imbattable pour la majorité des Marocains.
           </p>
           <p>
             <strong>Points forts :</strong> Carte gratuite, meilleurs taux immobilier, application mobile performante, offre jeunes Code 30, pas de frais de tenue de compte.
           </p>
           <p>
-            <strong>Points faibles :</strong> R\u00e9seau d&apos;agences limit\u00e9 (350 agences), offre entreprise moins d\u00e9velopp\u00e9e que les grandes banques.
+            <strong>Points faibles :</strong> Réseau d&apos;agences limité (350 agences), offre entreprise moins développée que les grandes banques.
           </p>
           <p>
-            <strong>Pour qui ?</strong> Jeunes actifs, primo-acc\u00e9dants immobiliers, clients digitaux qui privil\u00e9gient les tarifs bas et n&apos;ont pas besoin d&apos;un grand r\u00e9seau d&apos;agences.
+            <strong>Pour qui ?</strong> Jeunes actifs, primo-accédants immobiliers, clients digitaux qui privilégient les tarifs bas et n&apos;ont pas besoin d&apos;un grand réseau d&apos;agences.
           </p>
 
           <h3>2. Attijariwafa Bank - Note : 8,5/10</h3>
           <p>
-            Le leader incontest\u00e9 du march\u00e9 bancaire marocain avec 24,4% de part de march\u00e9 et 4 800 agences. Attijariwafa Bank offre la gamme de produits la plus compl\u00e8te et le r\u00e9seau le plus \u00e9tendu. Son application mobile Attijari Mobile est l&apos;une des plus compl\u00e8tes du march\u00e9.
+            Le leader incontesté du marché bancaire marocain avec 24,4% de part de marché et 4 800 agences. Attijariwafa Bank offre la gamme de produits la plus complète et le réseau le plus étendu. Son application mobile Attijari Mobile est l&apos;une des plus complètes du marché.
           </p>
           <p>
-            <strong>Points forts :</strong> R\u00e9seau le plus vaste (4 800 agences), pr\u00e9sence internationale (25 pays), gamme de produits tr\u00e8s large, application mobile compl\u00e8te.
+            <strong>Points forts :</strong> Réseau le plus vaste (4 800 agences), présence internationale (25 pays), gamme de produits très large, application mobile complète.
           </p>
           <p>
-            <strong>Points faibles :</strong> Tarifs plus \u00e9lev\u00e9s que CIH ou CFG, taux de cr\u00e9dit conso \u00e9lev\u00e9, service client parfois lent en agence.
+            <strong>Points faibles :</strong> Tarifs plus élevés que CIH ou CFG, taux de crédit conso élevé, service client parfois lent en agence.
           </p>
           <p>
-            <strong>Pour qui ?</strong> Salari\u00e9s et cadres recherchant un service complet, entreprises, clients ayant besoin d&apos;un grand r\u00e9seau d&apos;agences.
+            <strong>Pour qui ?</strong> Salariés et cadres recherchant un service complet, entreprises, clients ayant besoin d&apos;un grand réseau d&apos;agences.
           </p>
 
           <h3>3. Banque Populaire - Note : 8,0/10</h3>
           <p>
-            La deuxi\u00e8me banque du Maroc se distingue par son mod\u00e8le coop\u00e9ratif unique et sa proximit\u00e9 avec les MRE (Marocains R\u00e9sidents \u00e0 l&apos;\u00c9tranger). Avec 4 600 agences et des Banques Populaires R\u00e9gionales (BPR) sur tout le territoire, elle est particuli\u00e8rement forte en zone rurale.
+            La deuxième banque du Maroc se distingue par son modèle coopératif unique et sa proximité avec les MRE (Marocains Résidents à l&apos;Étranger). Avec 4 600 agences et des Banques Populaires Régionales (BPR) sur tout le territoire, elle est particulièrement forte en zone rurale.
           </p>
           <p>
-            <strong>Points forts :</strong> Meilleure banque pour les MRE, mod\u00e8le coop\u00e9ratif, tarifs comp\u00e9titifs sur les comptes de base, forte pr\u00e9sence rurale.
+            <strong>Points forts :</strong> Meilleure banque pour les MRE, modèle coopératif, tarifs compétitifs sur les comptes de base, forte présence rurale.
           </p>
           <p>
-            <strong>Points faibles :</strong> Application mobile en retard, proc\u00e9dures parfois lourdes, taux de cr\u00e9dit conso \u00e9lev\u00e9.
+            <strong>Points faibles :</strong> Application mobile en retard, procédures parfois lourdes, taux de crédit conso élevé.
           </p>
           <p>
-            <strong>Pour qui ?</strong> MRE, clients en zone rurale, personnes attach\u00e9es au mod\u00e8le coop\u00e9ratif.
+            <strong>Pour qui ?</strong> MRE, clients en zone rurale, personnes attachées au modèle coopératif.
           </p>
 
           <h3>4. Bank of Africa (BMCE) - Note : 7,8/10</h3>
           <p>
-            La troisi\u00e8me banque du Maroc se distingue par sa dimension panafricaine avec une pr\u00e9sence dans plus de 30 pays du continent. C&apos;est la banque de r\u00e9f\u00e9rence pour les op\u00e9rations internationales, particuli\u00e8rement vers l&apos;Afrique subsaharienne.
+            La troisième banque du Maroc se distingue par sa dimension panafricaine avec une présence dans plus de 30 pays du continent. C&apos;est la banque de référence pour les opérations internationales, particulièrement vers l&apos;Afrique subsaharienne.
           </p>
 
           <h3>5. CFG Bank - Note : 7,5/10</h3>
           <p>
-            La plus jeune banque universelle du Maroc surprend par des tarifs agressifs et une exp\u00e9rience client moderne. Carte gratuite, taux immobilier comp\u00e9titif (d\u00e8s 4,5%) et agences au design contemporain. Son principal frein reste son r\u00e9seau tr\u00e8s limit\u00e9 de 40 agences.
+            La plus jeune banque universelle du Maroc surprend par des tarifs agressifs et une expérience client moderne. Carte gratuite, taux immobilier compétitif (dès 4,5%) et agences au design contemporain. Son principal frein reste son réseau très limité de 40 agences.
           </p>
 
-          <h3>6. Soci\u00e9t\u00e9 G\u00e9n\u00e9rale Maroc - Note : 7,5/10</h3>
+          <h3>6. Société Générale Maroc - Note : 7,5/10</h3>
           <p>
-            La filiale marocaine du groupe fran\u00e7ais se positionne sur le segment premium. Elle s\u00e9duit les cadres sup\u00e9rieurs et les entreprises \u00e0 vocation internationale gr\u00e2ce aux standards du groupe SG et une offre corporate de qualit\u00e9.
+            La filiale marocaine du groupe français se positionne sur le segment premium. Elle séduit les cadres supérieurs et les entreprises à vocation internationale grâce aux standards du groupe SG et une offre corporate de qualité.
           </p>
 
           <h3>7. BMCI (BNP Paribas) - Note : 7,2/10</h3>
           <p>
-            La filiale de BNP Paribas cible le segment ultra-premium avec la carte World Elite la plus exclusive du march\u00e9 (5 000 DH/an) et une expertise reconnue en gestion de patrimoine. Ses tarifs sont les plus \u00e9lev\u00e9s du march\u00e9.
+            La filiale de BNP Paribas cible le segment ultra-premium avec la carte World Elite la plus exclusive du marché (5 000 DH/an) et une expertise reconnue en gestion de patrimoine. Ses tarifs sont les plus élevés du marché.
           </p>
 
-          <h3>8. Cr\u00e9dit Agricole du Maroc - Note : 6,8/10</h3>
+          <h3>8. Crédit Agricole du Maroc - Note : 6,8/10</h3>
           <p>
-            La banque publique sp\u00e9cialiste du monde agricole offre les tarifs les plus bas (carte d\u00e8s 50 DH/an) mais souffre d&apos;un retard digital important et de taux de cr\u00e9dit l\u00e9g\u00e8rement au-dessus de la moyenne.
+            La banque publique spécialiste du monde agricole offre les tarifs les plus bas (carte dès 50 DH/an) mais souffre d&apos;un retard digital important et de taux de crédit légèrement au-dessus de la moyenne.
           </p>
 
           <h3>9. Al Barid Bank - Note : 6,5/10</h3>
           <p>
-            La banque postale est l&apos;acteur cl\u00e9 de l&apos;inclusion financi\u00e8re au Maroc avec 8 millions de clients et la couverture g\u00e9ographique la plus \u00e9tendue. Id\u00e9ale pour les petits budgets et les zones rurales, mais limit\u00e9e en termes de produits et de services digitaux.
+            La banque postale est l&apos;acteur clé de l&apos;inclusion financière au Maroc avec 8 millions de clients et la couverture géographique la plus étendue. Idéale pour les petits budgets et les zones rurales, mais limitée en termes de produits et de services digitaux.
           </p>
 
-          <h2>Crit\u00e8res de choix : comment d\u00e9cider ?</h2>
+          <h2>Critères de choix : comment décider ?</h2>
 
-          <h3>Si vous cherchez les meilleurs taux de cr\u00e9dit immobilier</h3>
+          <h3>Si vous cherchez les meilleurs taux de crédit immobilier</h3>
           <p>
-            CIH Bank et CFG Bank proposent les taux les plus bas du march\u00e9 (d\u00e8s 4,5%). Attijariwafa Bank et la Banque Populaire sont \u00e9galement comp\u00e9titives pour les bons profils. Pour un projet immobilier, un \u00e9cart de 0,5% sur 20 ans peut repr\u00e9senter une \u00e9conomie de plus de 50 000 DH. Utilisez notre <a href="/simulation-credit-immobilier/">simulateur de cr\u00e9dit immobilier</a> pour comparer pr\u00e9cis\u00e9ment.
+            CIH Bank et CFG Bank proposent les taux les plus bas du marché (dès 4,5%). Attijariwafa Bank et la Banque Populaire sont également compétitives pour les bons profils. Pour un projet immobilier, un écart de 0,5% sur 20 ans peut représenter une économie de plus de 50 000 DH. Utilisez notre <a href="/simulation-credit-immobilier/">simulateur de crédit immobilier</a> pour comparer précisément.
           </p>
 
           <h3>Si vous cherchez les frais les plus bas</h3>
           <p>
-            CIH Bank, CFG Bank et Al Barid Bank offrent des cartes classiques gratuites (0 DH/an). CIH Bank va plus loin en supprimant les frais de tenue de compte. Pour une utilisation basique (carte classique + compte courant), ces trois banques sont les moins ch\u00e8res du march\u00e9.
+            CIH Bank, CFG Bank et Al Barid Bank offrent des cartes classiques gratuites (0 DH/an). CIH Bank va plus loin en supprimant les frais de tenue de compte. Pour une utilisation basique (carte classique + compte courant), ces trois banques sont les moins chères du marché.
           </p>
 
-          <h3>Si vous avez besoin d&apos;un grand r\u00e9seau</h3>
+          <h3>Si vous avez besoin d&apos;un grand réseau</h3>
           <p>
-            Attijariwafa Bank (4 800 agences) et la Banque Populaire (4 600 agences) sont indispensables si vous avez besoin d&apos;agences physiques, notamment en dehors des grandes villes. Al Barid Bank, gr\u00e2ce au r\u00e9seau postal, couvre aussi les zones les plus recul\u00e9es.
+            Attijariwafa Bank (4 800 agences) et la Banque Populaire (4 600 agences) sont indispensables si vous avez besoin d&apos;agences physiques, notamment en dehors des grandes villes. Al Barid Bank, grâce au réseau postal, couvre aussi les zones les plus reculées.
           </p>
 
-          <h3>Si vous \u00eates MRE</h3>
+          <h3>Si vous êtes MRE</h3>
           <p>
-            La Banque Populaire est historiquement la banque des MRE, avec des agences dans les pays d&apos;accueil (France, Belgique, Italie, Espagne, Pays-Bas) et des produits d\u00e9di\u00e9s (compte Bladi, cr\u00e9dit immobilier MRE). Attijariwafa Bank propose \u00e9galement une offre MRE attractive.
+            La Banque Populaire est historiquement la banque des MRE, avec des agences dans les pays d&apos;accueil (France, Belgique, Italie, Espagne, Pays-Bas) et des produits dédiés (compte Bladi, crédit immobilier MRE). Attijariwafa Bank propose également une offre MRE attractive.
           </p>
 
           <h2>Conclusion : quelle banque choisir ?</h2>
           <p>
-            Il n&apos;existe pas de meilleure banque universelle, mais une meilleure banque pour chaque profil. Pour les jeunes et les clients digitaux, CIH Bank est imbattable. Pour ceux qui ont besoin d&apos;un r\u00e9seau complet, Attijariwafa Bank reste le choix de r\u00e9f\u00e9rence. Les MRE se tourneront vers la Banque Populaire. Et les budgets serr\u00e9s trouveront leur bonheur chez CFG Bank ou Al Barid Bank.
+            Il n&apos;existe pas de meilleure banque universelle, mais une meilleure banque pour chaque profil. Pour les jeunes et les clients digitaux, CIH Bank est imbattable. Pour ceux qui ont besoin d&apos;un réseau complet, Attijariwafa Bank reste le choix de référence. Les MRE se tourneront vers la Banque Populaire. Et les budgets serrés trouveront leur bonheur chez CFG Bank ou Al Barid Bank.
           </p>
           <p>
-            N&apos;h\u00e9sitez pas \u00e0 utiliser notre <a href="/comparateur-banques/">comparateur de banques</a> pour une analyse personnalis\u00e9e et nos simulateurs pour calculer pr\u00e9cis\u00e9ment l&apos;impact des diff\u00e9rences de taux sur votre projet.
+            N&apos;hésitez pas à utiliser notre <a href="/comparateur-banques/">comparateur de banques</a> pour une analyse personnalisée et nos simulateurs pour calculer précisément l&apos;impact des différences de taux sur votre projet.
           </p>
         </div>
 
         {/* FAQ */}
         <div className="mt-12">
-          <h2 className="text-xl font-bold text-charcoal mb-6">Questions fr\u00e9quentes</h2>
+          <h2 className="text-xl font-bold text-charcoal mb-6">Questions fréquentes</h2>
           <div className="space-y-3">
             {faqData.map((faq, i) => (
               <details key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden group">
@@ -183,8 +185,18 @@ export default function MeilleureBanqueMarocPage() {
           </div>
         </div>
 
+        {/* Sources */}
+        <div className="mt-10 border-t border-gray-200 pt-6">
+          <h2 className="text-sm font-bold text-charcoal mb-3">Sources</h2>
+          <ul className="text-xs text-gray-500 space-y-1">
+            <li>Bank Al-Maghrib – Rapport annuel sur la supervision bancaire (<a href="https://www.bkam.ma" className="underline hover:text-brand" rel="noopener noreferrer" target="_blank">bkam.ma</a>)</li>
+            <li>Association Professionnelle des Banques du Maroc (GPBM) – Parts de marché et statistiques sectorielles</li>
+            <li>Rapports annuels des banques marocaines – Données financières et réseau d&apos;agences</li>
+          </ul>
+        </div>
+
         <p className="mt-8 text-sm text-gray-500 italic">
-          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis \u00e0 jour en 2025
+          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis à jour en 2026
         </p>
       </article>
     </>

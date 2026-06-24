@@ -26,23 +26,23 @@ export default function SimulateurLeasing() {
   return (
     <div className="space-y-6">
       <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
-        <h3 className="text-lg font-bold text-charcoal mb-4">Param\u00e8tres du leasing</h3>
+        <h3 className="text-lg font-bold text-charcoal mb-4">Paramètres du leasing</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <ChampMontant
-            label="Prix du v\u00e9hicule TTC"
+            label="Prix du véhicule TTC"
             value={prixStr}
             onChange={setPrixStr}
-            aide="Prix catalogue TTC du v\u00e9hicule"
+            aide="Prix catalogue TTC du véhicule"
           />
           <ChampMontant
             label="Apport personnel"
             value={apportStr}
             onChange={setApportStr}
-            aide="G\u00e9n\u00e9ralement 10-30% du prix"
+            aide="Généralement 10-30% du prix"
           />
           <div className="mb-4">
             <label className="block text-sm font-medium text-charcoal mb-1">
-              Dur\u00e9e : {dureeAns} an{dureeAns > 1 ? 's' : ''} ({dureeMois} mois)
+              Durée : {dureeAns} an{dureeAns > 1 ? 's' : ''} ({dureeMois} mois)
             </label>
             <input
               type="range"
@@ -65,41 +65,41 @@ export default function SimulateurLeasing() {
             aide="Taux du leasing (5-8% au Maroc)"
           />
           <ChampMontant
-            label="Valeur r\u00e9siduelle"
+            label="Valeur résiduelle"
             value={vrStr}
             onChange={setVrStr}
-            aide="Montant \u00e0 payer en fin de contrat pour devenir propri\u00e9taire"
+            aide="Montant à payer en fin de contrat pour devenir propriétaire"
           />
         </div>
       </div>
 
       {prix > 0 && apport < prix && (
         <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
-          <h3 className="text-lg font-bold text-charcoal mb-4">R\u00e9sultats du leasing</h3>
+          <h3 className="text-lg font-bold text-charcoal mb-4">Résultats du leasing</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <ResultCard label="Mensualit\u00e9" value={formatDH(resultat.mensualite)} highlight />
-            <ResultCard label="Montant financ\u00e9" value={formatDH(resultat.montantFinance)} />
-            <ResultCard label="Co\u00fbt total" value={formatDH(resultat.coutTotal)} />
-            <ResultCard label="Co\u00fbt des int\u00e9r\u00eats" value={formatDH(resultat.coutInterets)} />
+            <ResultCard label="Mensualité" value={formatDH(resultat.mensualite)} highlight />
+            <ResultCard label="Montant financé" value={formatDH(resultat.montantFinance)} />
+            <ResultCard label="Coût total" value={formatDH(resultat.coutTotal)} />
+            <ResultCard label="Coût des intérêts" value={formatDH(resultat.coutInterets)} />
           </div>
 
           <div className="mt-6 p-4 bg-blue-50 rounded-lg">
-            <h4 className="font-semibold text-charcoal mb-2">R\u00e9capitulatif</h4>
+            <h4 className="font-semibold text-charcoal mb-2">Récapitulatif</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
-              <span className="text-gray-600">Prix du v\u00e9hicule</span>
+              <span className="text-gray-600">Prix du véhicule</span>
               <span className="font-semibold text-right">{formatDH(prix)}</span>
               <span className="text-gray-600">Apport</span>
               <span className="font-semibold text-right">{formatDH(apport)} ({((apport / prix) * 100).toFixed(0)}%)</span>
-              <span className="text-gray-600">Montant financ\u00e9</span>
+              <span className="text-gray-600">Montant financé</span>
               <span className="font-semibold text-right">{formatDH(resultat.montantFinance)}</span>
               <span className="text-gray-600">Taux</span>
               <span className="font-semibold text-right">{formatPourcent(taux)}</span>
-              <span className="text-gray-600">Dur\u00e9e</span>
+              <span className="text-gray-600">Durée</span>
               <span className="font-semibold text-right">{dureeAns} ans ({dureeMois} mois)</span>
-              <span className="text-gray-600">Valeur r\u00e9siduelle</span>
+              <span className="text-gray-600">Valeur résiduelle</span>
               <span className="font-semibold text-right">{formatDH(vr)}</span>
               <div className="col-span-2 border-t border-blue-200 my-2"></div>
-              <span className="text-gray-600 font-medium">Total \u00e0 payer</span>
+              <span className="text-gray-600 font-medium">Total à payer</span>
               <span className="font-bold text-brand text-right">{formatDH(resultat.coutTotal)}</span>
             </div>
           </div>

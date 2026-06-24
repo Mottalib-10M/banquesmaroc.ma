@@ -8,8 +8,8 @@ import './globals.css';
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.name} - Comparateur de banques et simulateur cr\u00e9dit`,
-    template: `%s | ${SITE.name}`,
+    default: `${SITE.name} - Comparateur de banques et simulateur crédit au Maroc`,
+    template: '%s',
   },
   description: SITE.description,
   authors: [{ name: SITE.author }],
@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: 'GOOGLE_VERIFICATION_CODE',
+    other: { 'msvalidate.01': 'BING_VERIFICATION_CODE' },
   },
 };
 
@@ -43,6 +47,7 @@ export default function RootLayout({
   return (
     <html lang="fr" dir="ltr">
       <head>
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.webmanifest" />
         <link rel="icon" href="/favicon.ico" />
         <script
@@ -51,8 +56,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen flex flex-col bg-white">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-blue-600 focus:rounded focus:shadow-lg">
+          Aller au contenu
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

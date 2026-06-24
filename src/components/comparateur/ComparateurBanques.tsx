@@ -76,8 +76,8 @@ export default function ComparateurBanques() {
             >
               <option value="tous">Toutes les banques</option>
               <option value="universelle">Banque universelle</option>
-              <option value="cooperative">Banque coop\u00e9rative</option>
-              <option value="specialisee">Banque sp\u00e9cialis\u00e9e</option>
+              <option value="cooperative">Banque coopérative</option>
+              <option value="specialisee">Banque spécialisée</option>
               <option value="postale">Banque postale</option>
             </select>
           </div>
@@ -90,14 +90,14 @@ export default function ComparateurBanques() {
             >
               <option value="note">Meilleure note</option>
               <option value="tauxImmobilier">Meilleur taux immobilier</option>
-              <option value="agences">Plus grand r\u00e9seau</option>
-              <option value="partMarche">Part de march\u00e9</option>
+              <option value="agences">Plus grand réseau</option>
+              <option value="partMarche">Part de marché</option>
             </select>
           </div>
         </div>
         {selectedBanques.length > 0 && (
           <p className="mt-3 text-sm text-brand font-medium">
-            {selectedBanques.length}/3 banque{selectedBanques.length > 1 ? 's' : ''} s\u00e9lectionn\u00e9e{selectedBanques.length > 1 ? 's' : ''} pour la comparaison
+            {selectedBanques.length}/3 banque{selectedBanques.length > 1 ? 's' : ''} sélectionnée{selectedBanques.length > 1 ? 's' : ''} pour la comparaison
           </p>
         )}
       </div>
@@ -119,13 +119,13 @@ export default function ComparateurBanques() {
       {banquesComparees.length >= 2 && (
         <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
           <div className="bg-brand px-6 py-4">
-            <h3 className="text-lg font-bold text-white">Comparaison d\u00e9taill\u00e9e</h3>
+            <h3 className="text-lg font-bold text-white">Comparaison détaillée</h3>
           </div>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-light-gray">
-                  <th className="text-left px-4 py-3 font-semibold text-charcoal">Crit\u00e8re</th>
+                  <th className="text-left px-4 py-3 font-semibold text-charcoal">Critère</th>
                   {banquesComparees.map((b) => (
                     <th key={b.id} className="text-center px-4 py-3 font-semibold text-charcoal">{b.nomCourt}</th>
                   ))}
@@ -133,7 +133,7 @@ export default function ComparateurBanques() {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 <CompaRow label="Note" values={banquesComparees.map((b) => `${b.note}/10`)} best="max" rawValues={banquesComparees.map((b) => b.note)} />
-                <CompaRow label="Part de march\u00e9" values={banquesComparees.map((b) => formatPourcent(b.partMarche))} best="max" rawValues={banquesComparees.map((b) => b.partMarche)} />
+                <CompaRow label="Part de marché" values={banquesComparees.map((b) => formatPourcent(b.partMarche))} best="max" rawValues={banquesComparees.map((b) => b.partMarche)} />
                 <CompaRow label="Agences" values={banquesComparees.map((b) => b.agences.toLocaleString('fr-FR'))} best="max" rawValues={banquesComparees.map((b) => b.agences)} />
                 <CompaRow label="Taux immo. min" values={banquesComparees.map((b) => formatPourcent(b.tauxCredit.immobilier.min))} best="min" rawValues={banquesComparees.map((b) => b.tauxCredit.immobilier.min)} />
                 <CompaRow label="Taux immo. max" values={banquesComparees.map((b) => formatPourcent(b.tauxCredit.immobilier.max))} best="min" rawValues={banquesComparees.map((b) => b.tauxCredit.immobilier.max)} />
@@ -190,8 +190,8 @@ function BanqueCard({
           'bg-purple-100 text-purple-700'
         }`}>
           {banque.type === 'universelle' ? 'Universelle' :
-           banque.type === 'cooperative' ? 'Coop\u00e9rative' :
-           banque.type === 'specialisee' ? 'Sp\u00e9cialis\u00e9e' : 'Postale'}
+           banque.type === 'cooperative' ? 'Coopérative' :
+           banque.type === 'specialisee' ? 'Spécialisée' : 'Postale'}
         </span>
       </div>
 
@@ -207,7 +207,7 @@ function BanqueCard({
           <p className="font-semibold">{banque.agences.toLocaleString('fr-FR')}</p>
         </div>
         <div>
-          <span className="text-gray-500">Part march\u00e9</span>
+          <span className="text-gray-500">Part marché</span>
           <p className="font-semibold">{formatPourcent(banque.partMarche, 1)}</p>
         </div>
         <div>
@@ -237,13 +237,13 @@ function BanqueCard({
               : 'bg-blue-50 text-brand hover:bg-blue-100'
           }`}
         >
-          {selected ? 'S\u00e9lectionn\u00e9e' : 'Comparer'}
+          {selected ? 'Sélectionnée' : 'Comparer'}
         </button>
         <a
           href={`/banques/${banque.id}/`}
           className="px-3 py-2 text-sm font-medium text-charcoal border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors"
         >
-          D\u00e9tail
+          Détail
         </a>
       </div>
     </div>

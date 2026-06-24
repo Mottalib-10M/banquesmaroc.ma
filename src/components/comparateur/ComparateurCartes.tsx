@@ -54,7 +54,7 @@ export default function ComparateurCartes() {
             </button>
           ))}
         </div>
-        <p className="mt-3 text-sm text-gray-500">{cartesFiltrees.length} carte{cartesFiltrees.length > 1 ? 's' : ''} trouv\u00e9e{cartesFiltrees.length > 1 ? 's' : ''}</p>
+        <p className="mt-3 text-sm text-gray-500">{cartesFiltrees.length} carte{cartesFiltrees.length > 1 ? 's' : ''} trouvée{cartesFiltrees.length > 1 ? 's' : ''}</p>
       </div>
 
       {/* Tableau desktop */}

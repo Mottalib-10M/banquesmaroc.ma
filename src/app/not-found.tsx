@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page non trouv\u00e9e - Banques Maroc',
-  description: 'La page que vous cherchez n\'existe pas ou a \u00e9t\u00e9 d\u00e9plac\u00e9e.',
+  title: 'Page non trouvée - Comparateur de banques marocaines Banques Maroc',
+  description: 'La page que vous cherchez n\'existe pas ou a été déplacée. Retrouvez notre comparateur de banques marocaines, nos simulateurs de crédit et nos guides financiers sur Banques Maroc.',
 };
 
 export default function NotFound() {
@@ -12,18 +12,18 @@ export default function NotFound() {
         <span className="text-7xl font-bold text-brand">404</span>
       </div>
       <h1 className="text-2xl sm:text-3xl font-bold text-charcoal mb-4">
-        Page non trouv\u00e9e
+        Page non trouvée
       </h1>
       <p className="text-gray-500 mb-8">
-        La page que vous cherchez n&apos;existe pas ou a \u00e9t\u00e9 d\u00e9plac\u00e9e.
-        V\u00e9rifiez l&apos;URL ou retournez \u00e0 l&apos;accueil.
+        La page que vous cherchez n&apos;existe pas ou a été déplacée.
+        Vérifiez l&apos;URL ou retournez à l&apos;accueil.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="/"
           className="inline-flex items-center justify-center px-6 py-3 bg-brand text-white font-medium rounded-lg hover:bg-brand-dark transition-colors"
         >
-          Retour \u00e0 l&apos;accueil
+          Retour à l&apos;accueil
         </a>
         <a
           href="/comparateur-banques/"
@@ -35,8 +35,8 @@ export default function NotFound() {
 
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
         <a href="/simulation-credit-immobilier/" className="p-4 bg-light-gray rounded-lg hover:bg-blue-50 transition-colors">
-          <h3 className="font-semibold text-charcoal">Cr\u00e9dit immobilier</h3>
-          <p className="text-sm text-gray-500">Simulez votre pr\u00eat</p>
+          <h3 className="font-semibold text-charcoal">Crédit immobilier</h3>
+          <p className="text-sm text-gray-500">Simulez votre prêt</p>
         </a>
         <a href="/comparateur-cartes/" className="p-4 bg-light-gray rounded-lg hover:bg-blue-50 transition-colors">
           <h3 className="font-semibold text-charcoal">Cartes bancaires</h3>

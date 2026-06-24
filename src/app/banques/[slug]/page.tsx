@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!banque) return {};
 
   return {
-    title: `${banque.nom} - Avis, taux et tarifs 2025`,
-    description: `Tout sur ${banque.nom} : taux cr\u00e9dit immobilier d\u00e8s ${formatPourcent(banque.tauxCredit.immobilier.min)}, ${banque.agences} agences, cartes et avis. Note ${banque.note}/10.`,
+    title: `${banque.nom} - Avis, taux et tarifs 2026 au Maroc`,
+    description: `Tout sur ${banque.nom} au Maroc en 2026 : taux crédit immobilier dès ${formatPourcent(banque.tauxCredit.immobilier.min)}, réseau de ${banque.agences} agences, cartes bancaires, frais et avis détaillé. Note globale ${banque.note}/10.`,
     alternates: { canonical: `${SITE.url}/banques/${slug}/` },
   };
 }
@@ -43,7 +43,7 @@ export default async function BanquePage({ params }: PageProps) {
   const productSchema = banque.tauxCredit.immobilier.min > 0
     ? buildFinancialProductSchema(
         banque.nom,
-        `Cr\u00e9dit immobilier ${banque.nomCourt}`,
+        `Crédit immobilier ${banque.nomCourt}`,
         banque.tauxCredit.immobilier,
         'MortgageLoan'
       )
@@ -91,11 +91,11 @@ export default async function BanquePage({ params }: PageProps) {
                 </div>
                 <span className="text-sm text-gray-500">
                   {banque.type === 'universelle' ? 'Banque universelle' :
-                   banque.type === 'cooperative' ? 'Banque coop\u00e9rative' :
-                   banque.type === 'specialisee' ? 'Banque sp\u00e9cialis\u00e9e' :
+                   banque.type === 'cooperative' ? 'Banque coopérative' :
+                   banque.type === 'specialisee' ? 'Banque spécialisée' :
                    banque.type === 'centrale' ? 'Banque centrale' : 'Banque postale'}
                 </span>
-                <span className="text-sm text-gray-500">Fond\u00e9e en {banque.fondation}</span>
+                <span className="text-sm text-gray-500">Fondée en {banque.fondation}</span>
                 <span className="text-sm text-gray-500">{banque.siege}</span>
               </div>
               <p className="mt-3 text-gray-600">{banque.description}</p>
@@ -106,13 +106,13 @@ export default async function BanquePage({ params }: PageProps) {
         {/* Key Metrics */}
         {banque.type !== 'centrale' && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-            <MetricCard label="Part de march\u00e9" value={formatPourcent(banque.partMarche, 1)} />
+            <MetricCard label="Part de marché" value={formatPourcent(banque.partMarche, 1)} />
             <MetricCard label="Agences" value={banque.agences.toLocaleString('fr-FR')} />
             {banque.tauxCredit.immobilier.min > 0 && (
-              <MetricCard label="Taux immobilier d\u00e8s" value={formatPourcent(banque.tauxCredit.immobilier.min)} highlight />
+              <MetricCard label="Taux immobilier dès" value={formatPourcent(banque.tauxCredit.immobilier.min)} highlight />
             )}
             <MetricCard
-              label="Carte d\u00e8s"
+              label="Carte dès"
               value={banque.cartes.length > 0 ? formatDH(Math.min(...banque.cartes.map((c) => c.cotisation))) : 'N/A'}
             />
           </div>
@@ -129,24 +129,24 @@ export default async function BanquePage({ params }: PageProps) {
         {/* Taux de credit */}
         {banque.tauxCredit.immobilier.min > 0 && (
           <section className="mb-8">
-            <h2 className="text-xl font-bold text-charcoal mb-4">Taux de cr\u00e9dit {banque.nomCourt}</h2>
+            <h2 className="text-xl font-bold text-charcoal mb-4">Taux de crédit {banque.nomCourt}</h2>
             <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="bg-light-gray">
-                    <th className="text-left px-4 py-3 font-semibold">Type de cr\u00e9dit</th>
+                    <th className="text-left px-4 py-3 font-semibold">Type de crédit</th>
                     <th className="text-right px-4 py-3 font-semibold">Taux minimum</th>
                     <th className="text-right px-4 py-3 font-semibold">Taux maximum</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-100">
                   <tr>
-                    <td className="px-4 py-3 font-medium">Cr\u00e9dit immobilier</td>
+                    <td className="px-4 py-3 font-medium">Crédit immobilier</td>
                     <td className="px-4 py-3 text-right text-brand font-semibold">{formatPourcent(banque.tauxCredit.immobilier.min)}</td>
                     <td className="px-4 py-3 text-right">{formatPourcent(banque.tauxCredit.immobilier.max)}</td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-3 font-medium">Cr\u00e9dit consommation</td>
+                    <td className="px-4 py-3 font-medium">Crédit consommation</td>
                     <td className="px-4 py-3 text-right text-brand font-semibold">{formatPourcent(banque.tauxCredit.conso.min)}</td>
                     <td className="px-4 py-3 text-right">{formatPourcent(banque.tauxCredit.conso.max)}</td>
                   </tr>
@@ -160,10 +160,10 @@ export default async function BanquePage({ params }: PageProps) {
             </div>
             <div className="mt-3 flex gap-3">
               <a href="/simulation-credit-immobilier/" className="text-sm text-brand font-medium hover:underline">
-                Simuler un cr\u00e9dit immobilier &rarr;
+                Simuler un crédit immobilier &rarr;
               </a>
               <a href="/simulation-credit-consommation/" className="text-sm text-brand font-medium hover:underline">
-                Simuler un cr\u00e9dit conso &rarr;
+                Simuler un crédit conso &rarr;
               </a>
             </div>
           </section>
@@ -188,7 +188,7 @@ export default async function BanquePage({ params }: PageProps) {
                       <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Carte incluse</span>
                     )}
                     <span className="text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">
-                      {compte.type === 'courant' ? 'Courant' : compte.type === 'epargne' ? '\u00c9pargne' : compte.type === 'professionnel' ? 'Pro' : 'Jeune'}
+                      {compte.type === 'courant' ? 'Courant' : compte.type === 'epargne' ? 'Épargne' : compte.type === 'professionnel' ? 'Pro' : 'Jeune'}
                     </span>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ export default async function BanquePage({ params }: PageProps) {
                         </td>
                         <td className="px-4 py-3 text-right">{formatDH(c.plafondRetraitJour)}</td>
                         <td className="px-4 py-3 text-right">{formatDH(c.plafondPaiementMois)}</td>
-                        <td className="px-4 py-3 text-center">{c.assuranceVoyage ? '\u2713' : '-'}</td>
+                        <td className="px-4 py-3 text-center">{c.assuranceVoyage ? '✓' : '-'}</td>
                         <td className="px-4 py-3 text-center">{c.cashback ? `${c.cashbackTaux}%` : '-'}</td>
                       </tr>
                     ))}
@@ -239,7 +239,7 @@ export default async function BanquePage({ params }: PageProps) {
 
         {/* Avantages / Inconvenients */}
         <section className="mb-8">
-          <h2 className="text-xl font-bold text-charcoal mb-4">Avantages et inconv\u00e9nients</h2>
+          <h2 className="text-xl font-bold text-charcoal mb-4">Avantages et inconvénients</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-green-50 rounded-xl border border-green-200 p-5">
               <h3 className="font-bold text-green-800 mb-3">Avantages</h3>
@@ -255,7 +255,7 @@ export default async function BanquePage({ params }: PageProps) {
               </ul>
             </div>
             <div className="bg-red-50 rounded-xl border border-red-200 p-5">
-              <h3 className="font-bold text-red-800 mb-3">Inconv\u00e9nients</h3>
+              <h3 className="font-bold text-red-800 mb-3">Inconvénients</h3>
               <ul className="space-y-2">
                 {banque.inconvenients.map((inc, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-red-700">
@@ -283,7 +283,7 @@ export default async function BanquePage({ params }: PageProps) {
                 <p className="font-bold text-charcoal">{b.nomCourt}</p>
                 <p className="text-sm text-brand font-semibold">{b.note}/10</p>
                 {b.tauxCredit.immobilier.min > 0 && (
-                  <p className="text-xs text-gray-500 mt-1">Immo d\u00e8s {formatPourcent(b.tauxCredit.immobilier.min)}</p>
+                  <p className="text-xs text-gray-500 mt-1">Immo dès {formatPourcent(b.tauxCredit.immobilier.min)}</p>
                 )}
               </a>
             ))}
@@ -291,7 +291,7 @@ export default async function BanquePage({ params }: PageProps) {
         </section>
 
         <p className="text-sm text-gray-500 italic">
-          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis \u00e0 jour en 2025
+          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis à jour en 2026
         </p>
       </div>
     </>

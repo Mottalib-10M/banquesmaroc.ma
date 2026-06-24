@@ -1,13 +1,36 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
-import { buildBreadcrumbSchema, buildWebApplicationSchema } from '@/lib/seo';
+import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from '@/lib/seo';
 import SimulateurLeasing from '@/components/simulateurs/SimulateurLeasing';
 
 export const metadata: Metadata = {
-  title: 'Simulateur leasing auto Maroc 2025 - LOA v\u00e9hicule',
-  description: 'Calculez votre mensualit\u00e9 de leasing auto (LOA) au Maroc. Taux de 5% \u00e0 8%. Comparez les offres de leasing automobile.',
+  title: 'Simulateur leasing auto Maroc 2026 - LOA véhicule, calculez vos mensualités',
+  description: 'Calculez votre mensualité de leasing auto (LOA) au Maroc en 2026. Taux de 5% à 8%. Comparez les offres de Wafabail, Maroc Leasing, Maghrebail et tous les organismes de leasing automobile.',
   alternates: { canonical: `${SITE.url}/simulation-leasing/` },
 };
+
+const faqLeasing = [
+  {
+    question: 'Quel est le taux moyen de leasing auto au Maroc ?',
+    answer: 'En 2026, les taux de leasing automobile au Maroc varient entre 5% et 8% selon l\'organisme, la durée du contrat et le profil du client. Les meilleurs taux sont généralement réservés aux entreprises et professions libérales qui bénéficient de l\'avantage fiscal.',
+  },
+  {
+    question: 'Quelle est la différence entre leasing et crédit auto ?',
+    answer: 'Le leasing (LOA) est une location avec option d\'achat : le véhicule reste la propriété de l\'organisme de leasing jusqu\'au paiement de la valeur résiduelle. Le crédit auto est un prêt classique : vous êtes propriétaire dès l\'achat. Le leasing offre des avantages fiscaux pour les professionnels.',
+  },
+  {
+    question: 'Quel apport initial pour un leasing auto au Maroc ?',
+    answer: 'L\'apport initial (premier loyer majoré) représente généralement 10% à 30% du prix du véhicule. Plus l\'apport est élevé, plus les mensualités sont basses. Certains organismes proposent un leasing sans apport pour les entreprises avec un bon historique.',
+  },
+  {
+    question: 'Quels sont les avantages fiscaux du leasing au Maroc ?',
+    answer: 'Pour les professionnels et entreprises, les loyers de leasing sont entièrement déductibles du résultat imposable. La TVA est incluse dans les loyers et récupérable. Le véhicule n\'apparaît pas dans le bilan de l\'entreprise, ce qui améliore les ratios financiers.',
+  },
+  {
+    question: 'Que se passe-t-il à la fin du contrat de leasing ?',
+    answer: 'À la fin du contrat, vous avez trois options : lever l\'option d\'achat en payant la valeur résiduelle pour devenir propriétaire du véhicule, restituer le véhicule à l\'organisme de leasing, ou renouveler le contrat avec un nouveau véhicule. La plupart des clients lèvent l\'option d\'achat.',
+  },
+];
 
 export default function SimulationLeasingPage() {
   const breadcrumbSchema = buildBreadcrumbSchema([
@@ -16,14 +39,16 @@ export default function SimulationLeasingPage() {
   ]);
   const appSchema = buildWebApplicationSchema(
     'Simulateur leasing auto Maroc',
-    'Calculez votre mensualit\u00e9 de leasing automobile au Maroc',
+    'Calculez votre mensualité de leasing automobile au Maroc',
     `${SITE.url}/simulation-leasing/`
   );
+  const faqSchema = buildFAQSchema(faqLeasing);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <nav className="text-sm text-gray-500 mb-6">
@@ -36,7 +61,7 @@ export default function SimulationLeasingPage() {
           Simulateur de leasing auto au Maroc
         </h1>
         <p className="text-gray-500 mb-8 max-w-2xl">
-          Calculez votre mensualit\u00e9 de LOA (Location avec Option d&apos;Achat). Taux de 5% \u00e0 8% au Maroc, dur\u00e9e de 2 \u00e0 7 ans.
+          Calculez votre mensualité de LOA (Location avec Option d&apos;Achat). Taux de 5% à 8% au Maroc, durée de 2 à 7 ans.
         </p>
 
         <SimulateurLeasing />
@@ -44,38 +69,66 @@ export default function SimulationLeasingPage() {
         <div className="mt-12 prose max-w-4xl">
           <h2>Le leasing automobile au Maroc</h2>
           <p>
-            Le leasing auto, ou LOA (Location avec Option d&apos;Achat), est un mode de financement tr\u00e8s r\u00e9pandu
-            au Maroc, particuli\u00e8rement pour les professionnels et les entreprises gr\u00e2ce \u00e0 ses avantages fiscaux.
-            Contrairement au cr\u00e9dit classique, le v\u00e9hicule reste la propri\u00e9t\u00e9 de l&apos;organisme de leasing
-            jusqu&apos;au paiement de la valeur r\u00e9siduelle.
+            Le leasing auto, ou LOA (Location avec Option d&apos;Achat), est un mode de financement très répandu
+            au Maroc, particulièrement pour les professionnels et les entreprises grâce à ses avantages fiscaux.
+            Contrairement au crédit classique, le véhicule reste la propriété de l&apos;organisme de leasing
+            jusqu&apos;au paiement de la valeur résiduelle.
           </p>
 
           <h3>Comment fonctionne le leasing ?</h3>
           <p>
-            Vous choisissez un v\u00e9hicule, versez un apport initial (g\u00e9n\u00e9ralement 10-30%), puis payez des mensualit\u00e9s
-            pendant la dur\u00e9e du contrat (2 \u00e0 7 ans). \u00c0 la fin du contrat, vous avez le choix : lever l&apos;option
-            d&apos;achat en payant la valeur r\u00e9siduelle (et devenir propri\u00e9taire), restituer le v\u00e9hicule, ou
-            renouveler le contrat avec un nouveau v\u00e9hicule.
+            Vous choisissez un véhicule, versez un apport initial (généralement 10-30%), puis payez des mensualités
+            pendant la durée du contrat (2 à 7 ans). À la fin du contrat, vous avez le choix : lever l&apos;option
+            d&apos;achat en payant la valeur résiduelle (et devenir propriétaire), restituer le véhicule, ou
+            renouveler le contrat avec un nouveau véhicule.
           </p>
 
           <h3>Avantages du leasing</h3>
           <ul>
-            <li><strong>Avantage fiscal</strong> : les loyers sont d\u00e9ductibles pour les professionnels</li>
+            <li><strong>Avantage fiscal</strong> : les loyers sont déductibles pour les professionnels</li>
             <li><strong>Pas de TVA sur l&apos;acquisition</strong> : la TVA est incluse dans les loyers</li>
-            <li><strong>Mensualit\u00e9s plus basses</strong> : gr\u00e2ce \u00e0 la valeur r\u00e9siduelle</li>
-            <li><strong>Flexibilit\u00e9</strong> : possibilit\u00e9 de changer de v\u00e9hicule r\u00e9guli\u00e8rement</li>
+            <li><strong>Mensualités plus basses</strong> : grâce à la valeur résiduelle</li>
+            <li><strong>Flexibilité</strong> : possibilité de changer de véhicule régulièrement</li>
           </ul>
 
           <h3>Principaux acteurs du leasing au Maroc</h3>
           <p>
-            Les principales soci\u00e9t\u00e9s de leasing au Maroc sont : Wafabail (Attijariwafa Bank), Maroc Leasing
-            (Banque Populaire), Maghrebail (BMCE BOA), Sogelease (Soci\u00e9t\u00e9 G\u00e9n\u00e9rale) et BMCI Leasing. Les
-            taux varient de 5% \u00e0 8% selon l&apos;organisme et le profil du client.
+            Les principales sociétés de leasing au Maroc sont : Wafabail (Attijariwafa Bank), Maroc Leasing
+            (Banque Populaire), Maghrebail (BMCE BOA), Sogelease (Société Générale) et BMCI Leasing. Les
+            taux varient de 5% à 8% selon l&apos;organisme et le profil du client.
           </p>
         </div>
 
+        {/* FAQ */}
+        <div className="mt-12">
+          <h2 className="text-xl font-bold text-charcoal mb-6">Questions fréquentes</h2>
+          <div className="space-y-3">
+            {faqLeasing.map((faq, i) => (
+              <details key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden group">
+                <summary className="px-5 py-4 cursor-pointer font-semibold text-charcoal hover:text-brand transition-colors flex items-center justify-between">
+                  {faq.question}
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+
+        {/* Sources */}
+        <div className="mt-10 border-t border-gray-200 pt-6">
+          <h2 className="text-sm font-bold text-charcoal mb-3">Sources</h2>
+          <ul className="text-xs text-gray-500 space-y-1">
+            <li>Bank Al-Maghrib – Réglementation du crédit-bail et leasing (<a href="https://www.bkam.ma" className="underline hover:text-brand" rel="noopener noreferrer" target="_blank">bkam.ma</a>)</li>
+            <li>Association Professionnelle des Sociétés de Financement (APSF) – Statistiques du leasing au Maroc</li>
+            <li>Code Général des Impôts – Dispositions relatives à la déductibilité des loyers de leasing</li>
+          </ul>
+        </div>
+
         <p className="mt-8 text-sm text-gray-500 italic">
-          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis \u00e0 jour en 2025
+          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis à jour en 2026
         </p>
       </div>
     </>

@@ -32,7 +32,7 @@ export default function CapaciteChart({ data }: { data: ChartData[] }) {
         <XAxis dataKey="duree" tick={{ fontSize: 12 }} />
         <YAxis tick={{ fontSize: 12 }} tickFormatter={formatDHShort} />
         <Tooltip
-          formatter={(value: number) => [`${Math.round(value).toLocaleString('fr-FR')} DH`, 'Capacit\u00e9']}
+          formatter={(value: number) => [`${Math.round(value).toLocaleString('fr-FR')} DH`, 'Capacité']}
         />
         <Bar dataKey="capacite" radius={[6, 6, 0, 0]}>
           {data.map((_, index) => (

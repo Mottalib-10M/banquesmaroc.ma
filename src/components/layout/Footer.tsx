@@ -20,7 +20,7 @@ export default function Footer() {
               </span>
             </a>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Comparateur ind\u00e9pendant des banques marocaines. Simulez vos cr\u00e9dits, comparez les cartes et trouvez la meilleure banque au Maroc.
+              Comparateur indépendant des banques marocaines. Simulez vos crédits, comparez les cartes et trouvez la meilleure banque au Maroc.
             </p>
           </div>
 
@@ -28,10 +28,10 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">Simulateurs</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/simulation-credit-immobilier/" className="hover:text-white transition-colors">Cr\u00e9dit immobilier</a></li>
-              <li><a href="/simulation-credit-consommation/" className="hover:text-white transition-colors">Cr\u00e9dit consommation</a></li>
+              <li><a href="/simulation-credit-immobilier/" className="hover:text-white transition-colors">Crédit immobilier</a></li>
+              <li><a href="/simulation-credit-consommation/" className="hover:text-white transition-colors">Crédit consommation</a></li>
               <li><a href="/simulation-leasing/" className="hover:text-white transition-colors">Leasing auto</a></li>
-              <li><a href="/capacite-emprunt/" className="hover:text-white transition-colors">Capacit\u00e9 d&apos;emprunt</a></li>
+              <li><a href="/capacite-emprunt/" className="hover:text-white transition-colors">Capacité d&apos;emprunt</a></li>
             </ul>
           </div>
 
@@ -53,12 +53,12 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><a href="/guides/meilleure-banque-maroc/" className="hover:text-white transition-colors">Meilleure banque au Maroc</a></li>
               <li><a href="/guides/comment-choisir-carte-bancaire/" className="hover:text-white transition-colors">Choisir sa carte bancaire</a></li>
-              <li><a href="/guides/credit-immobilier-maroc/" className="hover:text-white transition-colors">Guide cr\u00e9dit immobilier</a></li>
+              <li><a href="/guides/credit-immobilier-maroc/" className="hover:text-white transition-colors">Guide crédit immobilier</a></li>
             </ul>
             <h3 className="text-white font-semibold mb-3 mt-6">Informations</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="/a-propos/" className="hover:text-white transition-colors">\u00c0 propos</a></li>
-              <li><a href="/mentions-legales/" className="hover:text-white transition-colors">Mentions l\u00e9gales</a></li>
+              <li><a href="/a-propos/" className="hover:text-white transition-colors">À propos</a></li>
+              <li><a href="/mentions-legales/" className="hover:text-white transition-colors">Mentions légales</a></li>
             </ul>
           </div>
         </div>
@@ -66,15 +66,15 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-gray-700">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
-              &copy; {new Date().getFullYear()} {SITE.name}. Tous droits r\u00e9serv\u00e9s.
+              &copy; {new Date().getFullYear()} {SITE.name}. Tous droits réservés.
             </p>
             <p className="text-xs text-gray-500">
               Par {SITE.author} ({SITE.authorCredentials}) &middot; {SITE.contact}
             </p>
           </div>
           <p className="mt-4 text-xs text-gray-500 max-w-3xl">
-            Les informations pr\u00e9sent\u00e9es sur ce site sont fournies \u00e0 titre indicatif et ne constituent pas un conseil financier.
-            Les taux et tarifs affich\u00e9s sont donn\u00e9s \u00e0 titre informatif et peuvent varier selon votre profil et les conditions du march\u00e9.
+            Les informations présentées sur ce site sont fournies à titre indicatif et ne constituent pas un conseil financier.
+            Les taux et tarifs affichés sont donnés à titre informatif et peuvent varier selon votre profil et les conditions du marché.
             Consultez votre banque pour obtenir les conditions exactes.
           </p>
         </div>

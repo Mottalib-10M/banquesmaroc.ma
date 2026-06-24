@@ -42,14 +42,14 @@ export default function AmortissementChart({ data }: { data: ChartData[] }) {
         />
         <Tooltip
           formatter={(value: number, name: string) => {
-            const label = name === 'capital' ? 'Capital rembours\u00e9' : name === 'interets' ? 'Int\u00e9r\u00eats' : 'Restant d\u00fb';
+            const label = name === 'capital' ? 'Capital remboursé' : name === 'interets' ? 'Intérêts' : 'Restant dû';
             return [`${Math.round(value).toLocaleString('fr-FR')} DH`, label];
           }}
-          labelFormatter={(label) => `Ann\u00e9e ${label}`}
+          labelFormatter={(label) => `Année ${label}`}
         />
         <Legend
           formatter={(value: string) =>
-            value === 'capital' ? 'Capital' : value === 'interets' ? 'Int\u00e9r\u00eats' : 'Restant d\u00fb'
+            value === 'capital' ? 'Capital' : value === 'interets' ? 'Intérêts' : 'Restant dû'
           }
         />
         <Bar dataKey="capital" stackId="a" fill="#1E40AF" radius={[0, 0, 0, 0]} />

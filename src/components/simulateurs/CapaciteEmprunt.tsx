@@ -47,13 +47,13 @@ export default function CapaciteEmpruntComponent() {
             label="Revenu mensuel net"
             value={revenuStr}
             onChange={setRevenuStr}
-            aide="Salaire net + autres revenus r\u00e9guliers"
+            aide="Salaire net + autres revenus réguliers"
           />
           <ChampMontant
             label="Charges mensuelles"
             value={chargesStr}
             onChange={setChargesStr}
-            aide="Cr\u00e9dits en cours, pensions, etc."
+            aide="Crédits en cours, pensions, etc."
           />
           <div className="mb-4">
             <label className="block text-sm font-medium text-charcoal mb-1">
@@ -72,19 +72,19 @@ export default function CapaciteEmpruntComponent() {
               <span>45% (max BAM)</span>
             </div>
             <p className="text-xs text-gray-500 mt-1">
-              Bank Al-Maghrib limite le taux d&apos;endettement \u00e0 45% maximum.
+              Bank Al-Maghrib limite le taux d&apos;endettement à 45% maximum.
             </p>
           </div>
           <ChampMontant
-            label="Taux du cr\u00e9dit"
+            label="Taux du crédit"
             value={tauxStr}
             onChange={setTauxStr}
             suffixe="%"
-            aide="Taux nominal annuel estim\u00e9"
+            aide="Taux nominal annuel estimé"
           />
           <div className="mb-4">
             <label className="block text-sm font-medium text-charcoal mb-1">
-              Dur\u00e9e : {dureeAns} an{dureeAns > 1 ? 's' : ''}
+              Durée : {dureeAns} an{dureeAns > 1 ? 's' : ''}
             </label>
             <input
               type="range"
@@ -104,7 +104,7 @@ export default function CapaciteEmpruntComponent() {
 
       {revenu > 0 && (
         <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
-          <h3 className="text-lg font-bold text-charcoal mb-4">Votre capacit\u00e9 d&apos;emprunt</h3>
+          <h3 className="text-lg font-bold text-charcoal mb-4">Votre capacité d&apos;emprunt</h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
             <div className="rounded-lg p-4 bg-brand text-white">
@@ -112,18 +112,18 @@ export default function CapaciteEmpruntComponent() {
               <p className="text-2xl font-bold mt-1">{formatDH(capacite)}</p>
             </div>
             <div className="rounded-lg p-4 bg-light-gray">
-              <p className="text-sm text-gray-500">Mensualit\u00e9 max</p>
+              <p className="text-sm text-gray-500">Mensualité max</p>
               <p className="text-2xl font-bold mt-1 text-charcoal">{formatDH(Math.max(0, mensualiteMax))}</p>
             </div>
             <div className="rounded-lg p-4 bg-light-gray">
-              <p className="text-sm text-gray-500">Mensualit\u00e9 calcul\u00e9e</p>
+              <p className="text-sm text-gray-500">Mensualité calculée</p>
               <p className="text-2xl font-bold mt-1 text-charcoal">{formatDH(mensualiteCalculee)}</p>
             </div>
           </div>
 
           {/* Detail */}
           <div className="p-4 bg-blue-50 rounded-lg mb-6">
-            <h4 className="font-semibold text-charcoal mb-2">D\u00e9tail du calcul</h4>
+            <h4 className="font-semibold text-charcoal mb-2">Détail du calcul</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
               <span className="text-gray-600">Revenu mensuel net</span>
               <span className="font-semibold text-right">{formatDH(revenu)}</span>
@@ -131,21 +131,21 @@ export default function CapaciteEmpruntComponent() {
               <span className="font-semibold text-right">{formatDH(charges)}</span>
               <span className="text-gray-600">Taux d&apos;endettement</span>
               <span className="font-semibold text-right">{formatPourcent(tauxEndettement, 0)}</span>
-              <span className="text-gray-600">Mensualit\u00e9 maximale</span>
+              <span className="text-gray-600">Mensualité maximale</span>
               <span className="font-semibold text-right">{formatDH(Math.max(0, mensualiteMax))}</span>
-              <span className="text-gray-600">Taux du cr\u00e9dit</span>
+              <span className="text-gray-600">Taux du crédit</span>
               <span className="font-semibold text-right">{formatPourcent(taux)}</span>
-              <span className="text-gray-600">Dur\u00e9e</span>
+              <span className="text-gray-600">Durée</span>
               <span className="font-semibold text-right">{dureeAns} ans</span>
               <div className="col-span-2 border-t border-blue-200 my-2"></div>
-              <span className="text-gray-600 font-medium">Capacit\u00e9 d&apos;emprunt</span>
+              <span className="text-gray-600 font-medium">Capacité d&apos;emprunt</span>
               <span className="font-bold text-brand text-right text-lg">{formatDH(capacite)}</span>
             </div>
           </div>
 
           {/* Chart */}
           <div>
-            <h4 className="font-semibold text-charcoal mb-3">Impact de la dur\u00e9e sur la capacit\u00e9 d&apos;emprunt</h4>
+            <h4 className="font-semibold text-charcoal mb-3">Impact de la durée sur la capacité d&apos;emprunt</h4>
             <div className="h-64">
               <CapaciteChart data={chartData} />
             </div>
