@@ -1,10 +1,12 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
 import { calculerCoutTotal, calculerTableauAmortissement } from '@/lib/credit-engine';
 import { formatDH, formatPourcent, parseInputNumber, sanitizeNumericInput } from '@/lib/format';
 import { getBanquesRetail } from '@/data/banques';
 import ChampMontant from '@/components/ui/ChampMontant';
+import ShareButtons from '@/components/ui/ShareButtons';
+import { readParam, readParamStr, useURLSync, getCurrentURL } from '@/hooks/useURLState';
 import dynamic from 'next/dynamic';
 
 const AmortissementChart = dynamic(() => import('./AmortissementChart'), { ssr: false });
@@ -34,9 +36,37 @@ export default function SimulateurCredit({
   const banques = useMemo(() => getBanquesRetail().filter(b => b.tauxCredit.immobilier.min > 0), []);
   const maxDuree = type === 'immobilier' ? 25 : 7;
 
+  // URL state: read on mount
+  useEffect(() => {
+    const m = readParam('montant', montantDefaut);
+    const d = readParam('duree', dureeDefaut);
+    const t = readParam('taux', tauxDefaut);
+    setMontantStr(m.toString());
+    setDureeAns(d);
+    setTauxStr(t.toString());
+  }, [montantDefaut, dureeDefaut, tauxDefaut]);
+
+  // URL state: sync on change
+  const urlDefaults = useMemo(() => ({
+    montant: montantDefaut,
+    duree: dureeDefaut,
+    taux: tauxDefaut,
+  }), [montantDefaut, dureeDefaut, tauxDefaut]);
+
+  const { syncToURL } = useURLSync(urlDefaults);
+
   const montant = parseInputNumber(montantStr);
   const taux = parseInputNumber(tauxStr);
   const dureeMois = dureeAns * 12;
+
+  // Sync to URL whenever values change
+  useEffect(() => {
+    syncToURL({
+      montant: montant,
+      duree: dureeAns,
+      taux: taux,
+    });
+  }, [montant, dureeAns, taux, syncToURL]);
 
   const resultat = useMemo(
     () => calculerCoutTotal(montant, taux, dureeMois),
@@ -96,6 +126,17 @@ export default function SimulateurCredit({
     }
     return years;
   }, [tableau, dureeAns]);
+
+  // Share text
+  const typeLabel = type === 'immobilier' ? 'credit immobilier' : 'credit consommation';
+  const shareText = montant > 0 && taux > 0
+    ? `Ma mensualite ${typeLabel} : ${formatDH(resultat.mensualite)}/mois pour ${formatDH(montant)} sur ${dureeAns} ans. Simulez le votre :`
+    : '';
+
+  const [shareURL, setShareURL] = useState('');
+  useEffect(() => {
+    setShareURL(getCurrentURL());
+  }, [montant, dureeAns, taux]);
 
   return (
     <div className="space-y-6">
@@ -226,9 +267,12 @@ export default function SimulateurCredit({
             />
           </div>
 
+          {/* Share buttons */}
+          <ShareButtons text={shareText} url={shareURL} />
+
           {/* Comparaison */}
           {comparerMode && comparaisons.length > 0 && (
-            <div className="mb-6">
+            <div className="mb-6 mt-6">
               <h4 className="font-semibold text-charcoal mb-3">Comparaison entre banques</h4>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">

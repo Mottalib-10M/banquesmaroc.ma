@@ -1,16 +1,38 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculerLeasingAuto } from '@/lib/credit-engine';
 import { formatDH, formatPourcent, parseInputNumber } from '@/lib/format';
 import ChampMontant from '@/components/ui/ChampMontant';
+import ShareButtons from '@/components/ui/ShareButtons';
+import { readParam, useURLSync, getCurrentURL } from '@/hooks/useURLState';
+
+const DEFAULTS = {
+  prix: 250000,
+  apport: 50000,
+  duree: 5,
+  taux: 6.0,
+  vr: 25000,
+};
 
 export default function SimulateurLeasing() {
-  const [prixStr, setPrixStr] = useState('250000');
-  const [apportStr, setApportStr] = useState('50000');
-  const [dureeAns, setDureeAns] = useState(5);
-  const [tauxStr, setTauxStr] = useState('6.0');
-  const [vrStr, setVrStr] = useState('25000');
+  const [prixStr, setPrixStr] = useState(DEFAULTS.prix.toString());
+  const [apportStr, setApportStr] = useState(DEFAULTS.apport.toString());
+  const [dureeAns, setDureeAns] = useState(DEFAULTS.duree);
+  const [tauxStr, setTauxStr] = useState(DEFAULTS.taux.toString());
+  const [vrStr, setVrStr] = useState(DEFAULTS.vr.toString());
+
+  // URL state: read on mount
+  useEffect(() => {
+    setPrixStr(readParam('prix', DEFAULTS.prix).toString());
+    setApportStr(readParam('apport', DEFAULTS.apport).toString());
+    setDureeAns(readParam('duree', DEFAULTS.duree));
+    setTauxStr(readParam('taux', DEFAULTS.taux).toString());
+    setVrStr(readParam('vr', DEFAULTS.vr).toString());
+  }, []);
+
+  // URL state: sync on change
+  const { syncToURL } = useURLSync(DEFAULTS);
 
   const prix = parseInputNumber(prixStr);
   const apport = parseInputNumber(apportStr);
@@ -18,10 +40,25 @@ export default function SimulateurLeasing() {
   const vr = parseInputNumber(vrStr);
   const dureeMois = dureeAns * 12;
 
+  useEffect(() => {
+    syncToURL({ prix, apport, duree: dureeAns, taux, vr });
+  }, [prix, apport, dureeAns, taux, vr, syncToURL]);
+
   const resultat = useMemo(
     () => calculerLeasingAuto(prix, apport, taux, dureeMois, vr),
     [prix, apport, taux, dureeMois, vr]
   );
+
+  // Share
+  const hasResults = prix > 0 && apport < prix;
+  const shareText = hasResults
+    ? `Ma mensualite leasing auto : ${formatDH(resultat.mensualite)}/mois pour un vehicule a ${formatDH(prix)} sur ${dureeAns} ans. Simulez le votre :`
+    : '';
+
+  const [shareURL, setShareURL] = useState('');
+  useEffect(() => {
+    setShareURL(getCurrentURL());
+  }, [prix, apport, dureeAns, taux, vr]);
 
   return (
     <div className="space-y-6">
@@ -73,7 +110,7 @@ export default function SimulateurLeasing() {
         </div>
       </div>
 
-      {prix > 0 && apport < prix && (
+      {hasResults && (
         <div className="bg-white rounded-xl border border-gray-200 p-4 sm:p-6">
           <h3 className="text-lg font-bold text-charcoal mb-4">Résultats du leasing</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -82,6 +119,9 @@ export default function SimulateurLeasing() {
             <ResultCard label="Coût total" value={formatDH(resultat.coutTotal)} />
             <ResultCard label="Coût des intérêts" value={formatDH(resultat.coutInterets)} />
           </div>
+
+          {/* Share buttons */}
+          <ShareButtons text={shareText} url={shareURL} />
 
           <div className="mt-6 p-4 bg-blue-50 rounded-lg">
             <h4 className="font-semibold text-charcoal mb-2">Récapitulatif</h4>

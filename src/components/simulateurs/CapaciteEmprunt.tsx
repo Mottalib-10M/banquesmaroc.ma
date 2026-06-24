@@ -1,25 +1,51 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { calculerCapaciteEmprunt, calculerMensualite } from '@/lib/credit-engine';
 import { formatDH, formatPourcent, parseInputNumber } from '@/lib/format';
 import ChampMontant from '@/components/ui/ChampMontant';
+import ShareButtons from '@/components/ui/ShareButtons';
+import { readParam, useURLSync, getCurrentURL } from '@/hooks/useURLState';
 import dynamic from 'next/dynamic';
 
 const CapaciteChart = dynamic(() => import('./CapaciteChart'), { ssr: false });
 
+const DEFAULTS = {
+  revenu: 15000,
+  charges: 0,
+  endettement: 45,
+  taux: 4.75,
+  duree: 20,
+};
+
 export default function CapaciteEmpruntComponent() {
-  const [revenuStr, setRevenuStr] = useState('15000');
-  const [chargesStr, setChargesStr] = useState('0');
-  const [tauxEndettement, setTauxEndettement] = useState(45);
-  const [tauxStr, setTauxStr] = useState('4.75');
-  const [dureeAns, setDureeAns] = useState(20);
+  const [revenuStr, setRevenuStr] = useState(DEFAULTS.revenu.toString());
+  const [chargesStr, setChargesStr] = useState(DEFAULTS.charges.toString());
+  const [tauxEndettement, setTauxEndettement] = useState(DEFAULTS.endettement);
+  const [tauxStr, setTauxStr] = useState(DEFAULTS.taux.toString());
+  const [dureeAns, setDureeAns] = useState(DEFAULTS.duree);
+
+  // URL state: read on mount
+  useEffect(() => {
+    setRevenuStr(readParam('revenu', DEFAULTS.revenu).toString());
+    setChargesStr(readParam('charges', DEFAULTS.charges).toString());
+    setTauxEndettement(readParam('endettement', DEFAULTS.endettement));
+    setTauxStr(readParam('taux', DEFAULTS.taux).toString());
+    setDureeAns(readParam('duree', DEFAULTS.duree));
+  }, []);
+
+  // URL state: sync on change
+  const { syncToURL } = useURLSync(DEFAULTS);
 
   const revenu = parseInputNumber(revenuStr);
   const charges = parseInputNumber(chargesStr);
   const taux = parseInputNumber(tauxStr);
   const dureeMois = dureeAns * 12;
   const te = tauxEndettement / 100;
+
+  useEffect(() => {
+    syncToURL({ revenu, charges, endettement: tauxEndettement, taux, duree: dureeAns });
+  }, [revenu, charges, tauxEndettement, taux, dureeAns, syncToURL]);
 
   const capacite = useMemo(
     () => calculerCapaciteEmprunt(revenu, charges, te, taux, dureeMois),
@@ -37,6 +63,16 @@ export default function CapaciteEmpruntComponent() {
       capacite: calculerCapaciteEmprunt(revenu, charges, te, taux, d * 12),
     }));
   }, [revenu, charges, te, taux]);
+
+  // Share
+  const shareText = revenu > 0
+    ? `Ma capacite d'emprunt : ${formatDH(capacite)} sur ${dureeAns} ans avec un revenu de ${formatDH(revenu)}/mois. Calculez la votre :`
+    : '';
+
+  const [shareURL, setShareURL] = useState('');
+  useEffect(() => {
+    setShareURL(getCurrentURL());
+  }, [revenu, charges, tauxEndettement, taux, dureeAns]);
 
   return (
     <div className="space-y-6">
@@ -121,8 +157,11 @@ export default function CapaciteEmpruntComponent() {
             </div>
           </div>
 
+          {/* Share buttons */}
+          <ShareButtons text={shareText} url={shareURL} />
+
           {/* Detail */}
-          <div className="p-4 bg-blue-50 rounded-lg mb-6">
+          <div className="p-4 bg-blue-50 rounded-lg mb-6 mt-6">
             <h4 className="font-semibold text-charcoal mb-2">Détail du calcul</h4>
             <div className="grid grid-cols-2 gap-2 text-sm">
               <span className="text-gray-600">Revenu mensuel net</span>
