@@ -1,15 +1,40 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
-import { buildBreadcrumbSchema } from '@/lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo';
 import ComparateurCartes from '@/components/comparateur/ComparateurCartes';
 
 export const metadata: Metadata = {
-  title: 'Comparateur cartes bancaires Maroc 2026 - Tarifs et plafonds comparés',
-  description: 'Comparez toutes les cartes bancaires au Maroc en 2026 : Visa, Mastercard, classique, Gold, Platinum et Infinite. Cotisations annuelles, plafonds de retrait et paiement, assurances voyage et cashback comparés par banque.',
+  title: 'Comparateur cartes bancaires Maroc - Tarifs comparés',
+  description: 'Comparez toutes les cartes bancaires au Maroc : Visa, Mastercard, classique, Gold, Platinum et Infinite. Cotisations, plafonds et assurances par banque.',
   alternates: { canonical: `${SITE.url}/comparateur-cartes/` },
 };
 
+
+const faqCartes = [
+  {
+    question: 'Quelle est la carte bancaire la moins chère au Maroc ?',
+    answer: 'Les cartes classiques de CIH Bank, CFG Bank et Al Barid Bank (e-Barid) sont entièrement gratuites à 0 DH/an. Le Crédit Agricole propose aussi une carte classique très abordable à 50 DH/an.',
+  },
+  {
+    question: 'Quelle carte bancaire pour voyager depuis le Maroc ?',
+    answer: 'Pour voyager, optez pour une carte Gold minimum. La CFG Bank Gold (200 DH/an) et la CIH Bank Gold (250 DH/an) offrent le meilleur rapport qualité-prix avec assurance voyage et plafonds internationaux confortables.',
+  },
+  {
+    question: 'Visa ou Mastercard : quelle différence au Maroc ?',
+    answer: 'Au Maroc, Visa et Mastercard sont acceptées partout de façon identique. La majorité des banques marocaines proposent des cartes Visa. Quelques banques offrent le choix entre les deux réseaux. En pratique, il n\'y a pas de différence notable.',
+  },
+  {
+    question: 'Comment obtenir une carte Platinum au Maroc ?',
+    answer: 'La carte Platinum est accessible aux clients avec des revenus stables généralement supérieurs à 15 000 DH/mois. CIH Bank propose la Platinum la moins chère du marché à 600 DH/an avec cashback et conciergerie inclus.',
+  },
+  {
+    question: 'Le cashback des cartes bancaires est-il rentable au Maroc ?',
+    answer: 'Le cashback de 0,5% sur une carte Platinum à 800 DH/an devient rentable si vos dépenses par carte dépassent 160 000 DH/an (13 333 DH/mois). En dessous, la cotisation annule le gain du cashback.',
+  },
+];
+
 export default function ComparateurCartesPage() {
+  const faqSchema = buildFAQSchema(faqCartes);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Accueil', url: SITE.url },
     { name: 'Comparateur cartes', url: `${SITE.url}/comparateur-cartes/` },
@@ -21,6 +46,10 @@ export default function ComparateurCartesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <nav className="text-sm text-gray-500 mb-6">
@@ -30,7 +59,7 @@ export default function ComparateurCartesPage() {
         </nav>
 
         <h1 className="text-2xl sm:text-3xl font-bold text-charcoal mb-2">
-          Comparateur de cartes bancaires au Maroc 2025
+          Comparateur de cartes bancaires au Maroc 2026
         </h1>
         <p className="text-gray-500 mb-8 max-w-2xl">
           Comparez les cartes Visa et Mastercard de toutes les banques marocaines. Filtrez par type et triez par cotisation ou plafonds.
@@ -74,6 +103,25 @@ export default function ComparateurCartesPage() {
             des assurances complètes et un accès aux lounges d&apos;aéroport. La carte World Elite de la BMCI est
             la plus chère du marché (5 000 DH/an) mais aussi la plus exclusive.
           </p>
+        </div>
+
+
+        {/* FAQ */}
+        <div className="mt-12">
+          <h2 className="text-xl font-bold text-charcoal mb-6">Questions fréquentes sur les cartes bancaires au Maroc</h2>
+          <div className="space-y-3">
+            {faqCartes.map((faq, i) => (
+              <details key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden group">
+                <summary className="px-5 py-4 cursor-pointer font-semibold text-charcoal hover:text-brand transition-colors flex items-center justify-between">
+                  {faq.question}
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
         </div>
 
         <p className="mt-6 text-sm text-gray-500 italic">

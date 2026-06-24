@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Page non trouvée - Comparateur de banques marocaines Banques Maroc',
-  description: 'La page que vous cherchez n\'existe pas ou a été déplacée. Retrouvez notre comparateur de banques marocaines, nos simulateurs de crédit et nos guides financiers sur Banques Maroc.',
+  title: 'Page non trouvée - Comparateur banques et crédits Maroc',
+  description: "La page demandée n'existe pas ou a été déplacée. Retrouvez notre comparateur de banques marocaines, nos simulateurs de crédit et nos guides financiers.",
+  robots: { index: false },
 };
 
 export default function NotFound() {

@@ -4,8 +4,8 @@ import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from
 import CapaciteEmpruntComponent from '@/components/simulateurs/CapaciteEmprunt';
 
 export const metadata: Metadata = {
-  title: "Capacité d'emprunt Maroc 2026 - Combien pouvez-vous emprunter",
-  description: "Calculez votre capacité d'emprunt au Maroc en 2026. Taux d'endettement maximum de 45% fixé par Bank Al-Maghrib. Découvrez combien vous pouvez emprunter selon vos revenus nets et vos charges existantes.",
+  title: "Capacité d'emprunt Maroc 2026 - Calculez votre budget",
+  description: "Calculez votre capacité d'emprunt au Maroc selon vos revenus. Taux d'endettement maximum de 45% fixé par Bank Al-Maghrib. Simulateur gratuit et rapide.",
   alternates: { canonical: `${SITE.url}/capacite-emprunt/` },
 };
 

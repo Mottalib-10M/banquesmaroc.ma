@@ -3,8 +3,8 @@ import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Comment choisir sa carte bancaire au Maroc 2026 - Guide comparatif complet',
-  description: 'Guide complet pour choisir votre carte bancaire au Maroc en 2026. Comparatif détaillé des cartes Visa et Mastercard : classique, Gold, Platinum et Infinite avec tarifs et avantages par banque.',
+  title: 'Choisir sa carte bancaire au Maroc - Guide comparatif',
+  description: 'Guide pour choisir votre carte bancaire au Maroc. Comparatif des cartes Visa et Mastercard : classique, Gold, Platinum et Infinite avec tarifs par banque.',
   alternates: { canonical: `${SITE.url}/guides/comment-choisir-carte-bancaire/` },
 };
 

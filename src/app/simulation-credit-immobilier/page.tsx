@@ -4,8 +4,8 @@ import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from
 import SimulateurCredit from '@/components/simulateurs/SimulateurCredit';
 
 export const metadata: Metadata = {
-  title: 'Simulateur crédit immobilier Maroc 2026 - Calculez vos mensualités et comparez les taux',
-  description: 'Simulez votre crédit immobilier au Maroc en 2026. Calculez votre mensualité, le coût total du prêt et comparez les taux de AWB, Banque Populaire, CIH, BOA et toutes les banques marocaines.',
+  title: 'Simulateur crédit immobilier Maroc - Calculez la mensualité',
+  description: "Simulez votre crédit immobilier au Maroc. Calculez la mensualité, le coût total et comparez les taux des banques marocaines. Tableau d'amortissement inclus.",
   alternates: { canonical: `${SITE.url}/simulation-credit-immobilier/` },
 };
 

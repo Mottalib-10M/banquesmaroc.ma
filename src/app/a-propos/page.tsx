@@ -44,7 +44,7 @@ export default function AProposPage() {
             Banques Maroc est fondé et dirigé par <strong>{SITE.author}</strong>, titulaire d&apos;un <strong>{SITE.authorCredentials}</strong>.
             Fort d&apos;une expérience dans le secteur financier et d&apos;une connaissance approfondie du marché bancaire
             marocain, Mottalib a créé cette plateforme pour répondre à un besoin réel : aider les Marocains à
-            naviguer dans l&apos;offre bancaire et à trouver les meilleures conditions pour leurs projets financiers.
+            s&apos;orienter dans l&apos;offre bancaire et trouver les meilleures conditions pour leurs projets financiers.
           </p>
 
           <h2>Notre méthodologie</h2>

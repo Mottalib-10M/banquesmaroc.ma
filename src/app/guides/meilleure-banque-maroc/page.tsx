@@ -3,8 +3,8 @@ import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Meilleure banque au Maroc 2026 - Comparatif complet des 9 banques marocaines',
-  description: 'Quelle est la meilleure banque au Maroc en 2026 ? Comparatif détaillé de AWB, Banque Populaire, CIH, BOA, Société Générale, BMCI, CFG, Crédit Agricole et Al Barid Bank avec notes et avis.',
+  title: 'Meilleure banque au Maroc 2026 - Comparatif des 9 banques',
+  description: 'Quelle est la meilleure banque au Maroc en 2026 ? Comparatif détaillé de AWB, Banque Populaire, CIH, BOA, SG, BMCI, CFG, CAM et Al Barid Bank avec notes.',
   alternates: { canonical: `${SITE.url}/guides/meilleure-banque-maroc/` },
 };
 

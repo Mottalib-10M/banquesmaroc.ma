@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from
 import SimulateurCredit from '@/components/simulateurs/SimulateurCredit';
 
 export const metadata: Metadata = {
-  title: 'Simulateur crédit consommation Maroc 2026 - Calculez vos mensualités',
+  title: 'Simulateur crédit consommation Maroc - Mensualités',
   description: 'Calculez votre mensualité de crédit à la consommation au Maroc en 2026. Comparez les taux de 7% à 12% des banques marocaines et obtenez votre tableau d\'amortissement complet gratuitement.',
   alternates: { canonical: `${SITE.url}/simulation-credit-consommation/` },
 };

@@ -1,15 +1,40 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
-import { buildBreadcrumbSchema } from '@/lib/seo';
+import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo';
 import ComparateurBanques from '@/components/comparateur/ComparateurBanques';
 
 export const metadata: Metadata = {
-  title: 'Comparateur banques Maroc 2026 - Comparez taux, frais et services',
-  description: 'Comparez les 9 banques marocaines en 2026 : Attijariwafa, Banque Populaire, BOA, CIH, SG, BMCI, CFG, CAM et Al Barid Bank. Taux de crédit immobilier, frais bancaires, cartes et services digitaux comparés côte à côte.',
+  title: 'Comparateur banques Maroc 2026 - Taux et frais comparés',
+  description: 'Comparez les 9 banques marocaines : AWB, Banque Populaire, BOA, CIH, SG, BMCI, CFG, CAM et Al Barid Bank. Taux de crédit, frais et services détaillés.',
   alternates: { canonical: `${SITE.url}/comparateur-banques/` },
 };
 
+
+const faqBanques = [
+  {
+    question: 'Quelle banque a les frais les plus bas au Maroc ?',
+    answer: 'CIH Bank, CFG Bank et Al Barid Bank proposent les frais les plus bas avec des cartes classiques gratuites (0 DH/an) et des comptes sans frais de tenue. CIH Bank supprime aussi les frais de tenue de compte.',
+  },
+  {
+    question: 'Quelle banque offre le meilleur taux immobilier au Maroc ?',
+    answer: 'CIH Bank et CFG Bank proposent les meilleurs taux immobiliers du marché, à partir de 4,5%. Attijariwafa Bank et la Banque Populaire sont aussi compétitives pour les bons profils avec des taux dès 4,5%.',
+  },
+  {
+    question: 'Comment comparer les banques marocaines efficacement ?',
+    answer: 'Comparez sur 5 critères clés : taux de crédit, frais bancaires (carte + tenue de compte), réseau d\'agences, qualité de l\'application mobile et offres spécifiques pour votre profil (jeune, MRE, cadre).',
+  },
+  {
+    question: 'Quelle banque choisir pour un compte professionnel au Maroc ?',
+    answer: 'Attijariwafa Bank et la Banque Populaire dominent le segment professionnel grâce à leur vaste réseau et leur gamme complète de produits entreprise. CIH Bank séduit les auto-entrepreneurs avec des offres digitales compétitives.',
+  },
+  {
+    question: 'Peut-on ouvrir un compte dans plusieurs banques au Maroc ?',
+    answer: 'Oui, il n\'y a aucune restriction légale au Maroc. La multi-bancarisation permet de profiter des avantages de chaque banque : taux bas chez CIH, grand réseau chez AWB, services MRE chez la Banque Populaire.',
+  },
+];
+
 export default function ComparateurBanquesPage() {
+  const faqSchema = buildFAQSchema(faqBanques);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Accueil', url: SITE.url },
     { name: 'Comparateur banques', url: `${SITE.url}/comparateur-banques/` },
@@ -21,6 +46,10 @@ export default function ComparateurBanquesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <nav className="text-sm text-gray-500 mb-6">
@@ -30,7 +59,7 @@ export default function ComparateurBanquesPage() {
         </nav>
 
         <h1 className="text-2xl sm:text-3xl font-bold text-charcoal mb-2">
-          Comparateur des banques au Maroc 2025
+          Comparateur des banques au Maroc 2026
         </h1>
         <p className="text-gray-500 mb-8 max-w-2xl">
           Sélectionnez jusqu&apos;à 3 banques pour les comparer côte à côte. Filtrez par type et triez par le critère qui vous importe le plus.
@@ -72,6 +101,25 @@ export default function ComparateurBanquesPage() {
             bancaires (20%), la qualité des services digitaux (20%), le réseau d&apos;agences (15%) et la satisfaction
             client (15%). Ces notes sont mises à jour régulièrement pour refléter les évolutions du marché.
           </p>
+        </div>
+
+
+        {/* FAQ */}
+        <div className="mt-12">
+          <h2 className="text-xl font-bold text-charcoal mb-6">Questions fréquentes sur les banques au Maroc</h2>
+          <div className="space-y-3">
+            {faqBanques.map((faq, i) => (
+              <details key={i} className="bg-white rounded-xl border border-gray-200 overflow-hidden group">
+                <summary className="px-5 py-4 cursor-pointer font-semibold text-charcoal hover:text-brand transition-colors flex items-center justify-between">
+                  {faq.question}
+                  <svg className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
         </div>
 
         <p className="mt-6 text-sm text-gray-500 italic">

@@ -4,8 +4,8 @@ import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from
 import SimulateurLeasing from '@/components/simulateurs/SimulateurLeasing';
 
 export const metadata: Metadata = {
-  title: 'Simulateur leasing auto Maroc 2026 - LOA véhicule, calculez vos mensualités',
-  description: 'Calculez votre mensualité de leasing auto (LOA) au Maroc en 2026. Taux de 5% à 8%. Comparez les offres de Wafabail, Maroc Leasing, Maghrebail et tous les organismes de leasing automobile.',
+  title: 'Simulateur leasing auto Maroc - LOA et mensualités',
+  description: 'Calculez votre mensualité de leasing auto (LOA) au Maroc. Taux de 5% à 8%. Comparez les offres de Wafabail, Maroc Leasing, Maghrebail et Sogelease Maroc.',
   alternates: { canonical: `${SITE.url}/simulation-leasing/` },
 };
 

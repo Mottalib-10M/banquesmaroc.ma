@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
-import { buildFAQSchema, buildBreadcrumbSchema, buildWebApplicationSchema } from '@/lib/seo';
+import { buildFAQSchema, buildBreadcrumbSchema, buildWebApplicationSchema, buildPersonSchema } from '@/lib/seo';
 import { getBanquesSorted } from '@/data/banques';
 import { formatPourcent } from '@/lib/format';
 
 export const metadata: Metadata = {
-  title: 'Comparateur banques Maroc 2026 - Crédit immobilier, cartes et simulateurs',
-  description: 'Comparez les 9 banques marocaines en 2026, simulez votre crédit immobilier et trouvez la meilleure carte bancaire au Maroc. Taux dès 4,5%, simulateurs gratuits et comparateur objectif AWB, BP, BOA, CIH, SG et plus.',
+  title: 'Comparateur banques Maroc 2026 - Crédit, cartes et taux',
+  description: 'Comparez les 9 banques marocaines, simulez votre crédit immobilier et trouvez la meilleure carte bancaire au Maroc. Taux dès 4,5%, simulateurs gratuits.',
   alternates: { canonical: `${SITE.url}/` },
 };
 
@@ -17,7 +17,7 @@ const faqData = [
   },
   {
     question: 'Quel est le taux de crédit immobilier au Maroc en 2026 ?',
-    answer: "En 2025, les taux de crédit immobilier au Maroc varient entre 4,5% et 6,5% selon la banque et le profil de l'emprunteur. Les meilleurs taux sont proposés par CIH Bank et CFG Bank (à partir de 4,5%). Le taux moyen du marché se situe autour de 5%.",
+    answer: "En 2026, les taux de crédit immobilier au Maroc varient entre 4,5% et 6,5% selon la banque et le profil de l'emprunteur. Les meilleurs taux sont proposés par CIH Bank et CFG Bank (à partir de 4,5%). Le taux moyen du marché se situe autour de 5%.",
   },
   {
     question: 'Quel est le taux d\'endettement maximum au Maroc ?',
@@ -45,7 +45,7 @@ export default function HomePage() {
     'Calculez votre mensualité et comparez les taux des banques marocaines',
     `${SITE.url}/simulation-credit-immobilier/`
   );
-
+  const personSchema = buildPersonSchema();
   return (
     <>
       <script
@@ -60,7 +60,10 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(appSchema) }}
       />
-
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       {/* Hero */}
       <section className="bg-gradient-to-br from-brand via-brand-dark to-blue-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
@@ -258,7 +261,7 @@ export default function HomePage() {
 
             <h3>Les taux de crédit immobilier au Maroc</h3>
             <p>
-              En 2025, les taux de crédit immobilier au Maroc se situent généralement entre 4,5% et 6,5% en taux
+              En 2026, les taux de crédit immobilier au Maroc se situent généralement entre 4,5% et 6,5% en taux
               fixe. Le taux exact dépend de plusieurs facteurs : la banque choisie, votre profil (ancienneté
               professionnelle, niveau de revenus), le montant emprunté et la durée du prêt. Les taux variables,
               moins courants, peuvent démarrer à partir de 3,5%.
