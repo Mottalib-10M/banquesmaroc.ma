@@ -104,6 +104,19 @@ export default function ComparateurBanquesPage() {
         </div>
 
 
+
+        {/* Articles lies */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <a href="/guides/meilleure-banque-maroc/" className="text-sm text-brand hover:underline font-medium">Meilleure banque au Maroc 2026 &rarr;</a>
+            <a href="/comparateur-cartes/" className="text-sm text-brand hover:underline font-medium">Comparateur de cartes bancaires &rarr;</a>
+            <a href="/simulation-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Simulateur credit immobilier &rarr;</a>
+            <a href="/guides/meilleure-banque-etudiant/" className="text-sm text-brand hover:underline font-medium">Meilleure banque etudiant &rarr;</a>
+            <a href="/guides/" className="text-sm text-brand hover:underline font-medium">Tous nos guides bancaires &rarr;</a>
+          </div>
+        </div>
+
         {/* FAQ */}
         <div className="mt-12">
           <h2 className="text-xl font-bold text-charcoal mb-6">Questions fréquentes sur les banques au Maroc</h2>

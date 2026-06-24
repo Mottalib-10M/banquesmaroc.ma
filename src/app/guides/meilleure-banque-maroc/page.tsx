@@ -19,7 +19,7 @@ const faqData = [
 export default function MeilleureBanqueMarocPage() {
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Accueil', url: SITE.url },
-    { name: 'Guides', url: `${SITE.url}/guides/meilleure-banque-maroc/` },
+    { name: 'Guides', url: `${SITE.url}/guides/` },
     { name: 'Meilleure banque Maroc', url: `${SITE.url}/guides/meilleure-banque-maroc/` },
   ]);
   const articleSchema = buildArticleSchema(
@@ -41,7 +41,7 @@ export default function MeilleureBanqueMarocPage() {
         <nav className="text-sm text-gray-500 mb-6">
           <a href="/" className="hover:text-brand">Accueil</a>
           <span className="mx-2">/</span>
-          <a href="/guides/meilleure-banque-maroc/" className="hover:text-brand">Guides</a>
+          <a href="/guides/" className="hover:text-brand">Guides</a>
           <span className="mx-2">/</span>
           <span className="text-charcoal font-medium">Meilleure banque</span>
         </nav>
@@ -55,6 +55,20 @@ export default function MeilleureBanqueMarocPage() {
             <span>Mis à jour le 1er juin 2026</span>
           </div>
         </header>
+
+        {/* En bref box */}
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
+          <h2 className="font-bold text-brand mb-2">En bref</h2>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li><strong>N°1 :</strong> CIH Bank (8,8/10) - Carte gratuite, meilleurs taux immobilier</li>
+            <li><strong>N°2 :</strong> Attijariwafa Bank (8,5/10) - Plus grand reseau (4 800 agences)</li>
+            <li><strong>N°3 :</strong> Banque Populaire (8,0/10) - Meilleure banque MRE</li>
+            <li><strong>Taux immobilier :</strong> des 4,50% (CIH Bank, CFG Bank)</li>
+            <li><strong>Carte gratuite :</strong> CIH Bank, CFG Bank, Al Barid Bank</li>
+          </ul>
+        </div>
+
+
 
         <div className="prose max-w-none">
           <p>
@@ -182,6 +196,19 @@ export default function MeilleureBanqueMarocPage() {
                 <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{faq.answer}</div>
               </details>
             ))}
+          </div>
+        </div>
+
+
+        {/* Articles lies */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/guides/meilleure-banque-etudiant/" className="text-sm text-brand hover:underline font-medium">Meilleure banque etudiant &rarr;</a>
+            <a href="/guides/meilleure-banque-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Meilleure banque credit immobilier &rarr;</a>
+            <a href="/guides/meilleure-banque-en-ligne/" className="text-sm text-brand hover:underline font-medium">Meilleure banque en ligne &rarr;</a>
+            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
+            <a href="/comparatif/attijariwafa-bank-vs-cih-bank/" className="text-sm text-brand hover:underline font-medium">AWB vs CIH Bank : comparatif &rarr;</a>
           </div>
         </div>
 

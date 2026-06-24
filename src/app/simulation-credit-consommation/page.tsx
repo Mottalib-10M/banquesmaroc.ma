@@ -116,6 +116,19 @@ export default function SimulationCreditConsoPage() {
           </div>
         </div>
 
+
+        {/* Articles lies */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <a href="/simulation-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Simulateur credit immobilier &rarr;</a>
+            <a href="/simulation-leasing/" className="text-sm text-brand hover:underline font-medium">Simulateur leasing auto &rarr;</a>
+            <a href="/capacite-emprunt/" className="text-sm text-brand hover:underline font-medium">Calculer sa capacite d&apos;emprunt &rarr;</a>
+            <a href="/guides/meilleure-banque-maroc/" className="text-sm text-brand hover:underline font-medium">Meilleure banque au Maroc 2026 &rarr;</a>
+            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
+          </div>
+        </div>
+
         {/* Sources */}
         <div className="mt-10 border-t border-gray-200 pt-6">
           <h2 className="text-sm font-bold text-charcoal mb-3">Sources</h2>

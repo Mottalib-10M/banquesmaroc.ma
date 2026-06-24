@@ -124,6 +124,18 @@ export default function ComparateurCartesPage() {
           </div>
         </div>
 
+
+        {/* Articles lies */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <a href="/guides/comment-choisir-carte-bancaire/" className="text-sm text-brand hover:underline font-medium">Comment choisir sa carte bancaire &rarr;</a>
+            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
+            <a href="/guides/meilleure-banque-en-ligne/" className="text-sm text-brand hover:underline font-medium">Meilleure banque en ligne &rarr;</a>
+            <a href="/guides/meilleure-banque-etudiant/" className="text-sm text-brand hover:underline font-medium">Meilleure banque etudiant &rarr;</a>
+          </div>
+        </div>
+
         <p className="mt-6 text-sm text-gray-500 italic">
           Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis à jour en 2026
         </p>

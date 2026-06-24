@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildFinancialProductSchema } from '@/lib/seo';
 import { banques, getBanqueById, getBanquesRetail } from '@/data/banques';
+import { getComparisonsForBank } from '@/data/comparisons';
 import { getCartesByBanque } from '@/data/cartes';
 import { formatDH, formatPourcent } from '@/lib/format';
 
@@ -33,6 +34,7 @@ export default async function BanquePage({ params }: PageProps) {
 
   const cartesBanque = getCartesByBanque(slug);
   const autresBanques = getBanquesRetail().filter((b) => b.id !== slug).slice(0, 4);
+  const comparisons = getComparisonsForBank(slug);
 
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Accueil', url: SITE.url },
@@ -270,6 +272,24 @@ export default async function BanquePage({ params }: PageProps) {
           </div>
         </section>
 
+        {/* Comparatifs vs */}
+        {comparisons.length > 0 && (
+          <section className="mb-8">
+            <h2 className="text-xl font-bold text-charcoal mb-4">Comparatifs {banque.nomCourt} vs</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {comparisons.map((c) => {
+                const otherName = c.slug1 === slug ? c.nomCourt2 : c.nomCourt1;
+                const vsSlug = `${c.slug1}-vs-${c.slug2}`;
+                return (
+                  <a key={vsSlug} href={`/comparatif/${vsSlug}/`} className="bg-white rounded-xl border border-gray-200 p-3 hover:shadow-md hover:border-brand transition-all text-sm font-medium text-brand">
+                    {banque.nomCourt} vs {otherName} &rarr;
+                  </a>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
         {/* Autres banques */}
         <section className="mb-8">
           <h2 className="text-xl font-bold text-charcoal mb-4">Comparer avec d&apos;autres banques</h2>
@@ -287,6 +307,18 @@ export default async function BanquePage({ params }: PageProps) {
                 )}
               </a>
             ))}
+          </div>
+        </section>
+
+        {/* Articles lies */}
+        <section className="mb-8 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/guides/meilleure-banque-maroc/" className="text-sm text-brand hover:underline font-medium">Meilleure banque au Maroc 2026 &rarr;</a>
+            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
+            <a href="/simulation-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Simulateur credit immobilier &rarr;</a>
+            <a href="/guides/comment-choisir-carte-bancaire/" className="text-sm text-brand hover:underline font-medium">Guide des cartes bancaires &rarr;</a>
+            <a href="/guides/" className="text-sm text-brand hover:underline font-medium">Tous nos guides bancaires &rarr;</a>
           </div>
         </section>
 

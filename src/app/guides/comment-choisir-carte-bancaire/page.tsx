@@ -19,7 +19,7 @@ const faqData = [
 export default function CommentChoisirCartePage() {
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: 'Accueil', url: SITE.url },
-    { name: 'Guides', url: `${SITE.url}/guides/meilleure-banque-maroc/` },
+    { name: 'Guides', url: `${SITE.url}/guides/` },
     { name: 'Choisir sa carte', url: `${SITE.url}/guides/comment-choisir-carte-bancaire/` },
   ]);
   const articleSchema = buildArticleSchema(
@@ -41,7 +41,7 @@ export default function CommentChoisirCartePage() {
         <nav className="text-sm text-gray-500 mb-6">
           <a href="/" className="hover:text-brand">Accueil</a>
           <span className="mx-2">/</span>
-          <a href="/guides/meilleure-banque-maroc/" className="hover:text-brand">Guides</a>
+          <a href="/guides/" className="hover:text-brand">Guides</a>
           <span className="mx-2">/</span>
           <span className="text-charcoal font-medium">Choisir sa carte bancaire</span>
         </nav>
@@ -55,6 +55,19 @@ export default function CommentChoisirCartePage() {
             <span>Mis à jour le 1er juin 2026</span>
           </div>
         </header>
+
+        {/* En bref box */}
+        <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
+          <h2 className="font-bold text-brand mb-2">En bref</h2>
+          <ul className="text-sm text-gray-700 space-y-1">
+            <li><strong>Carte gratuite :</strong> CIH Bank, CFG Bank, Al Barid Bank (0 DH/an)</li>
+            <li><strong>Meilleure Gold :</strong> CFG Bank (200 DH/an) et CIH Bank (250 DH/an)</li>
+            <li><strong>Meilleure Platinum :</strong> CIH Bank (600 DH/an, meilleur rapport qualite-prix)</li>
+            <li><strong>Plus exclusive :</strong> BMCI World Elite (5 000 DH/an)</li>
+          </ul>
+        </div>
+
+
 
         <div className="prose max-w-none">
           <p>
@@ -180,6 +193,19 @@ export default function CommentChoisirCartePage() {
                 <div className="px-5 pb-4 text-sm text-gray-600 leading-relaxed">{faq.answer}</div>
               </details>
             ))}
+          </div>
+        </div>
+
+
+        {/* Articles lies */}
+        <div className="mt-10 border-t border-gray-200 pt-8">
+          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <a href="/comparateur-cartes/" className="text-sm text-brand hover:underline font-medium">Comparateur de cartes bancaires &rarr;</a>
+            <a href="/guides/meilleure-banque-en-ligne/" className="text-sm text-brand hover:underline font-medium">Meilleure banque en ligne &rarr;</a>
+            <a href="/guides/meilleure-banque-etudiant/" className="text-sm text-brand hover:underline font-medium">Meilleure banque etudiant &rarr;</a>
+            <a href="/banques/cih-bank/" className="text-sm text-brand hover:underline font-medium">CIH Bank : avis complet &rarr;</a>
+            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
           </div>
         </div>
 

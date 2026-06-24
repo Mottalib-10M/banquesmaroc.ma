@@ -21,10 +21,13 @@ export const NAV_LINKS = [
     { href: '/capacite-emprunt/', label: "Capacité d'emprunt" },
   ]},
   { href: '/comparateur-cartes/', label: 'Cartes' },
-  { href: '/guides/meilleure-banque-maroc/', label: 'Guides', children: [
+  { href: '/guides/', label: 'Guides', children: [
+    { href: '/guides/', label: 'Tous les guides' },
     { href: '/guides/meilleure-banque-maroc/', label: 'Meilleure banque' },
     { href: '/guides/comment-choisir-carte-bancaire/', label: 'Choisir sa carte' },
     { href: '/guides/credit-immobilier-maroc/', label: 'Crédit immobilier' },
+    { href: '/guides/meilleure-banque-etudiant/', label: 'Banque étudiant' },
+    { href: '/guides/meilleure-banque-en-ligne/', label: 'Banque en ligne' },
   ]},
 ] as const;
 
