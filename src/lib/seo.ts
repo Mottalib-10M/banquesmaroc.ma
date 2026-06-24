@@ -6,7 +6,12 @@ export function buildOrganizationSchema() {
     '@type': 'Organization',
     name: SITE.name,
     url: SITE.url,
-    logo: `${SITE.url}/logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE.url}/logo.png`,
+      width: 1200,
+      height: 630,
+    },
     contactPoint: {
       '@type': 'ContactPoint',
       email: SITE.contact,
@@ -17,6 +22,44 @@ export function buildOrganizationSchema() {
       '@type': 'Person',
       name: SITE.author,
       description: SITE.authorCredentials,
+    },
+    sameAs: [
+      'https://www.facebook.com/banquesmaroc',
+      'https://twitter.com/banquesmaroc',
+      'https://www.linkedin.com/company/banquesmaroc',
+    ],
+  };
+}
+
+export function buildWebSiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE.name,
+    url: SITE.url,
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: `${SITE.url}/comparateur-banques/?q={search_term_string}`,
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+}
+
+export function buildPersonSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: SITE.author,
+    description: SITE.authorCredentials,
+    url: SITE.url,
+    jobTitle: 'Fondateur',
+    worksFor: {
+      '@type': 'Organization',
+      name: SITE.name,
+      url: SITE.url,
     },
   };
 }

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { SITE } from '@/lib/config';
-import { buildOrganizationSchema } from '@/lib/seo';
+import { buildOrganizationSchema, buildWebSiteSchema } from '@/lib/seo';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import './globals.css';
@@ -15,8 +15,22 @@ export const metadata: Metadata = {
   authors: [{ name: SITE.author }],
   openGraph: {
     type: 'website',
-    locale: SITE.locale,
+    locale: 'fr_MA',
     siteName: SITE.name,
+    images: [
+      {
+        url: 'https://banquesmaroc.ma/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: 'Banques Maroc',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SITE.name,
+    description: SITE.description,
+    images: ['https://banquesmaroc.ma/og-default.png'],
   },
   alternates: {
     canonical: SITE.url,
@@ -43,16 +57,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const orgSchema = buildOrganizationSchema();
+  const webSiteSchema = buildWebSiteSchema();
 
   return (
     <html lang="fr" dir="ltr">
       <head>
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="manifest" href="/manifest.webmanifest" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <meta property="og:locale" content="fr_MA" />
+        <meta property="og:image:alt" content="Banques Maroc" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
       </head>
       <body className="min-h-screen flex flex-col bg-white">
@@ -62,6 +84,11 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","CLARITY_ID")},3000);`,
+          }}
+        />
       </body>
     </html>
   );
