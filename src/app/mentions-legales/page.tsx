@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Mentions légales et politique de confidentialité 2026',
-  description: 'Mentions légales du site banquesmaroc.ma : éditeur, hébergement, conditions générales, protection des données personnelles et politique de cookies. Informations complètes conformes au droit marocain.',
+  description: 'Mentions légales du site banquesmaroc.ma : éditeur, hébergement, conditions générales, protection des données personnelles et politique de confidentialité.',
   alternates: { canonical: `${SITE.url}/mentions-legales/` },
 };
 

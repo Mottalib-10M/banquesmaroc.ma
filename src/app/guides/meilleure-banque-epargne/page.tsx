@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib
 
 export const metadata: Metadata = {
   title: 'Meilleure banque epargne Maroc 2026 - Taux et comptes',
-  description: 'Ou placer votre argent au Maroc en 2026 ? Comparatif des comptes epargne, livrets et plans epargne des banques marocaines avec taux de remuneration.',
+  description: 'Ou placer votre argent au Maroc en 2026 ? Comparatif des comptes epargne, livrets et plans epargne des banques marocaines avec taux de remuneration compares.',
   alternates: { canonical: `${SITE.url}/guides/meilleure-banque-epargne/` },
 };
 

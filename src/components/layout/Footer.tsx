@@ -4,6 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-charcoal text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <nav aria-label="Navigation de pied de page">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
@@ -47,21 +48,27 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Guides & Legal */}
+          {/* Guides, Actualités & Legal */}
           <div>
             <h3 className="text-white font-semibold mb-4">Guides</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="/guides/meilleure-banque-maroc/" className="hover:text-white transition-colors">Meilleure banque au Maroc</a></li>
               <li><a href="/guides/comment-choisir-carte-bancaire/" className="hover:text-white transition-colors">Choisir sa carte bancaire</a></li>
               <li><a href="/guides/credit-immobilier-maroc/" className="hover:text-white transition-colors">Guide crédit immobilier</a></li>
+              <li><a href="/glossaire/" className="hover:text-white transition-colors">Glossaire bancaire</a></li>
+              <li><a href="/actualites/" className="hover:text-white transition-colors">Actualités</a></li>
             </ul>
             <h3 className="text-white font-semibold mb-3 mt-6">Informations</h3>
             <ul className="space-y-2 text-sm">
               <li><a href="/a-propos/" className="hover:text-white transition-colors">À propos</a></li>
+              <li><a href="/methodologie/" className="hover:text-white transition-colors">Méthodologie</a></li>
+              <li><a href="/contact/" className="hover:text-white transition-colors">Contact</a></li>
+              <li><a href="/confidentialite/" className="hover:text-white transition-colors">Confidentialité</a></li>
               <li><a href="/mentions-legales/" className="hover:text-white transition-colors">Mentions légales</a></li>
             </ul>
           </div>
         </div>
+        </nav>
 
         <div className="mt-10 pt-8 border-t border-gray-700">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">

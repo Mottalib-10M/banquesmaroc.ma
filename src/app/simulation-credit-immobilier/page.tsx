@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from '@/lib/seo';
 import SimulateurCredit from '@/components/simulateurs/SimulateurCredit';
+import RelatedTools from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Simulateur crédit immobilier Maroc - Calculez la mensualité',
@@ -149,17 +150,8 @@ export default function SimulationCreditImmobilierPage() {
           </p>
         </div>
 
-        {/* Articles lies */}
-        <div className="mt-10 border-t border-gray-200 pt-8">
-          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <a href="/guides/meilleure-banque-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Meilleure banque credit immobilier &rarr;</a>
-            <a href="/guides/credit-immobilier-maroc/" className="text-sm text-brand hover:underline font-medium">Guide complet du credit immobilier &rarr;</a>
-            <a href="/capacite-emprunt/" className="text-sm text-brand hover:underline font-medium">Calculer sa capacite d&apos;emprunt &rarr;</a>
-            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
-            <a href="/simulation-credit-consommation/" className="text-sm text-brand hover:underline font-medium">Simulateur credit consommation &rarr;</a>
-          </div>
-        </div>
+        {/* Related tools */}
+        <RelatedTools currentPath="/simulation-credit-immobilier/" />
 
         {/* Sources */}
         <div className="mt-10 border-t border-gray-200 pt-6">

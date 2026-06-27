@@ -5,8 +5,8 @@ export function formatDH(montant: number): string {
   const rounded = Math.round(montant);
   const formatted = rounded
     .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
-  return `${formatted}\u00A0DH`;
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  return `${formatted} DH`;
 }
 
 /**
@@ -15,14 +15,14 @@ export function formatDH(montant: number): string {
 export function formatNombre(n: number): string {
   return Math.round(n)
     .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, '\u00A0');
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
 
 /**
  * Formate un pourcentage : 4,50%
  */
 export function formatPourcent(taux: number, decimales: number = 2): string {
-  return taux.toFixed(decimales).replace('.', ',') + '\u00A0%';
+  return taux.toFixed(decimales).replace('.', ',') + ' %';
 }
 
 /**

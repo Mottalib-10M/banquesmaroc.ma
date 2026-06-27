@@ -2,10 +2,11 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from '@/lib/seo';
 import SimulateurCredit from '@/components/simulateurs/SimulateurCredit';
+import RelatedTools from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Simulateur crédit consommation Maroc - Mensualités',
-  description: 'Calculez votre mensualité de crédit à la consommation au Maroc en 2026. Comparez les taux de 7% à 12% des banques marocaines et obtenez votre tableau d\'amortissement complet gratuitement.',
+  description: 'Calculez votre mensualité de crédit à la consommation au Maroc en 2026. Comparez les taux de 7% à 12% des banques marocaines. Tableau d\'amortissement inclus.',
   alternates: { canonical: `${SITE.url}/simulation-credit-consommation/` },
 };
 
@@ -139,17 +140,8 @@ export default function SimulationCreditConsoPage() {
           </p>
         </div>
 
-        {/* Articles lies */}
-        <div className="mt-10 border-t border-gray-200 pt-8">
-          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <a href="/simulation-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Simulateur credit immobilier &rarr;</a>
-            <a href="/simulation-leasing/" className="text-sm text-brand hover:underline font-medium">Simulateur leasing auto &rarr;</a>
-            <a href="/capacite-emprunt/" className="text-sm text-brand hover:underline font-medium">Calculer sa capacite d&apos;emprunt &rarr;</a>
-            <a href="/guides/meilleure-banque-maroc/" className="text-sm text-brand hover:underline font-medium">Meilleure banque au Maroc 2026 &rarr;</a>
-            <a href="/comparateur-banques/" className="text-sm text-brand hover:underline font-medium">Comparateur de banques &rarr;</a>
-          </div>
-        </div>
+        {/* Related tools */}
+        <RelatedTools currentPath="/simulation-credit-consommation/" />
 
         {/* Sources */}
         <div className="mt-10 border-t border-gray-200 pt-6">

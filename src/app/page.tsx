@@ -3,6 +3,7 @@ import { SITE } from '@/lib/config';
 import { buildFAQSchema, buildBreadcrumbSchema, buildWebApplicationSchema, buildPersonSchema } from '@/lib/seo';
 import { getBanquesSorted } from '@/data/banques';
 import { formatPourcent } from '@/lib/format';
+import RelatedTools from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Comparateur banques Maroc 2026 - Crédit, cartes et taux',
@@ -356,6 +357,11 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Related tools */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <RelatedTools currentPath="/" />
       </section>
     </>
   );

@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Guides bancaires Maroc 2026 : credit, cartes et epargne',
-  description: 'Retrouvez tous nos guides bancaires pour le Maroc en 2026 : choisir sa banque, comparer les cartes, obtenir un credit immobilier, epargner et optimiser ses frais.',
+  description: 'Nos guides bancaires pour le Maroc en 2026 : choisir sa banque, comparer les cartes, obtenir un credit immobilier, epargner et optimiser ses frais bancaires.',
   alternates: { canonical: `${SITE.url}/guides/` },
 };
 

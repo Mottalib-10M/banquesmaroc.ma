@@ -31,7 +31,7 @@ export default function ComparateurCartes() {
 
   const SortIcon = ({ col }: { col: TriCritere }) => (
     <span className="ml-1 inline-block">
-      {tri === col ? (triAsc ? '\u2191' : '\u2193') : '\u2195'}
+      {tri === col ? (triAsc ? '↑' : '↓') : '↕'}
     </span>
   );
 

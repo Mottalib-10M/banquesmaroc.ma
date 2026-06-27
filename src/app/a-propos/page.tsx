@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Banques au Maroc : notre mission et méthodologie 2026',
-  description: 'Découvrez Banques Maroc, le comparateur indépendant des banques marocaines fondé par Mottalib Radif (MBA INSEAD). Notre méthodologie transparente et nos critères de notation expliqués.',
+  description: 'Banques Maroc : comparateur indépendant des banques marocaines fondé par Mottalib Radif (MBA INSEAD). Méthodologie transparente et critères de notation.',
   alternates: { canonical: `${SITE.url}/a-propos/` },
 };
 

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildFAQSchema } from '@/lib/seo';
 import ComparateurBanques from '@/components/comparateur/ComparateurBanques';
+import RelatedTools from '@/components/ui/RelatedTools';
 
 export const metadata: Metadata = {
   title: 'Comparateur banques Maroc 2026 - Taux et frais comparés',
@@ -105,17 +106,8 @@ export default function ComparateurBanquesPage() {
 
 
 
-        {/* Articles lies */}
-        <div className="mt-10 border-t border-gray-200 pt-8">
-          <h2 className="text-lg font-bold text-charcoal mb-4">Articles lies</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            <a href="/guides/meilleure-banque-maroc/" className="text-sm text-brand hover:underline font-medium">Meilleure banque au Maroc 2026 &rarr;</a>
-            <a href="/comparateur-cartes/" className="text-sm text-brand hover:underline font-medium">Comparateur de cartes bancaires &rarr;</a>
-            <a href="/simulation-credit-immobilier/" className="text-sm text-brand hover:underline font-medium">Simulateur credit immobilier &rarr;</a>
-            <a href="/guides/meilleure-banque-etudiant/" className="text-sm text-brand hover:underline font-medium">Meilleure banque etudiant &rarr;</a>
-            <a href="/guides/" className="text-sm text-brand hover:underline font-medium">Tous nos guides bancaires &rarr;</a>
-          </div>
-        </div>
+        {/* Related tools */}
+        <RelatedTools currentPath="/comparateur-banques/" />
 
         {/* FAQ */}
         <div className="mt-12">

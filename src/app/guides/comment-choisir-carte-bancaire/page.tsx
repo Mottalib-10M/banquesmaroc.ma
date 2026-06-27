@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const faqData = [
   { question: 'Quelle est la carte bancaire la moins chère au Maroc ?', answer: 'Les cartes classiques de CIH Bank, CFG Bank et Al Barid Bank (carte e-Barid) sont entièrement gratuites (0 DH/an).' },
-  { question: 'Faut-il prendre une carte Gold au Maroc ?', answer: 'La carte Gold est recommandée si vous voyagez régulièrement à l\u2019étranger pour ses assurances voyage et ses plafonds internationaux plus élevés. Sinon, une carte classique suffit.' },
-  { question: 'Peut-on utiliser une carte marocaine à l\u2019étranger ?', answer: 'Oui, les cartes Gold, Platinum et Infinite sont utilisables à l\u2019international. Les cartes classiques sont généralement limitées au Maroc.' },
+  { question: 'Faut-il prendre une carte Gold au Maroc ?', answer: 'La carte Gold est recommandée si vous voyagez régulièrement à l’étranger pour ses assurances voyage et ses plafonds internationaux plus élevés. Sinon, une carte classique suffit.' },
+  { question: 'Peut-on utiliser une carte marocaine à l’étranger ?', answer: 'Oui, les cartes Gold, Platinum et Infinite sont utilisables à l’international. Les cartes classiques sont généralement limitées au Maroc.' },
   { question: 'Quelle est la meilleure carte Platinum au Maroc ?', answer: 'La carte Visa Platinum de CIH Bank (600 DH/an) offre le meilleur rapport qualité-prix du segment premium avec du cashback, une conciergerie et des plafonds élevés. Elle est trois fois moins chère que la Platinum de BMCI tout en offrant des services comparables.' },
   { question: 'Comment obtenir une carte Visa Infinite au Maroc ?', answer: 'La carte Visa Infinite est réservée aux clients à hauts revenus (généralement au-delà de 30 000 DH/mois). Vous devez en faire la demande auprès de votre banque. CIH Bank propose la moins chère à 2 000 DH/an, tandis que la World Elite BMCI coûte 5 000 DH/an.' },
 ];

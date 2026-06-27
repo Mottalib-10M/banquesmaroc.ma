@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!b1 || !b2) return {};
 
   return {
-    title: `${b1.nomCourt} vs ${b2.nomCourt} 2026 : comparatif complet`,
+    title: `${b1.nomCourt} vs ${b2.nomCourt} au Maroc 2026 : comparatif banques complet`,
     description: `Comparatif detaille ${b1.nom} vs ${b2.nom} au Maroc en 2026 : taux de credit, frais bancaires, cartes, reseau d'agences et services digitaux compares.`,
     alternates: { canonical: `${SITE.url}/comparatif/${parsed.slug1}-vs-${parsed.slug2}/` },
   };

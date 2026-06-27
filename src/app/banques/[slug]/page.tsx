@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${banque.nom} - Avis, taux et tarifs 2026 au Maroc`,
-    description: `Tout sur ${banque.nom} au Maroc en 2026 : taux crédit immobilier dès ${formatPourcent(banque.tauxCredit.immobilier.min)}, réseau de ${banque.agences} agences, cartes bancaires, frais et avis détaillé. Note globale ${banque.note}/10.`,
+    description: `Avis ${banque.nom} au Maroc 2026 : taux de crédit immobilier et conso, frais bancaires, cartes, réseau d'agences, services digitaux et note détaillée.`,
     alternates: { canonical: `${SITE.url}/banques/${slug}/` },
   };
 }

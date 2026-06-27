@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib
 
 export const metadata: Metadata = {
   title: 'Crédit immobilier Maroc 2026 - Guide taux et conditions',
-  description: 'Guide complet du crédit immobilier au Maroc en 2026 : taux actualisés par banque, conditions d\'obtention, garanties exigées, procédure détaillée, frais annexes et conseils pour obtenir le meilleur prêt.',
+  description: 'Guide crédit immobilier Maroc 2026 : taux actualisés par banque, conditions d\'obtention, garanties, procédure détaillée et conseils pour le meilleur prêt.',
   alternates: { canonical: `${SITE.url}/guides/credit-immobilier-maroc/` },
 };
 
