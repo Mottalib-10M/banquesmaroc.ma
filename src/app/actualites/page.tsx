@@ -3,14 +3,14 @@ import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Actualites bancaires Maroc 2025 : taux, reformes et digital',
+  title: 'Actualites bancaires Maroc 2026 : taux, reformes et digital',
   description: 'Suivez l\'actualite bancaire au Maroc : decisions de Bank Al-Maghrib, taux directeurs, reformes, mobile banking et nouveautes des banques marocaines.',
   alternates: { canonical: `${SITE.url}/actualites/` },
 };
 
 const articles = [
   {
-    title: 'Reforme bancaire au Maroc 2025 : taux directeurs, digitalisation et mobile banking',
+    title: 'Reforme bancaire au Maroc 2026 : taux directeurs, digitalisation et mobile banking',
     desc: 'Bank Al-Maghrib ajuste ses taux directeurs, les banques accelerent la digitalisation et le mobile banking explose. Analyse complete des reformes bancaires en cours.',
     href: '/actualites/reforme-bancaire-2025/',
     tag: 'Reforme',
@@ -104,7 +104,7 @@ export default function ActualitesHubPage() {
         </div>
 
         <p className="mt-8 text-sm text-gray-500 italic">
-          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis a jour en 2025
+          Par {SITE.author} ({SITE.authorCredentials}) &middot; Mis a jour en 2026
         </p>
       </div>
     </>

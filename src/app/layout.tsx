@@ -41,8 +41,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   verification: {
-    google: 'GOOGLE_VERIFICATION_CODE',
-    other: { 'msvalidate.01': 'BING_VERIFICATION_CODE' },
+    google: 'TODO-ADD-YOUR-GSC-VERIFICATION-CODE',
   },
 };
 
