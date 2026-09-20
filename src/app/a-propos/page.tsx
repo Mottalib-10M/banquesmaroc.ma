@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Banques au Maroc : notre mission et méthodologie 2026',
-  description: 'Banques Maroc : comparateur indépendant des banques marocaines fondé par Mottalib Radif (MBA INSEAD). Méthodologie transparente et critères de notation.',
+  description: 'Banques Maroc : comparateur indépendant des banques marocaines fondé par Radif Partners (Éditeur de calculateurs et de guides pratiques). Méthodologie transparente et critères de notation.',
   alternates: { canonical: `${SITE.url}/a-propos/` },
 };
 
@@ -43,7 +43,7 @@ export default function AProposPage() {
           <p>
             Banques Maroc est fondé et dirigé par <strong>{SITE.author}</strong>, titulaire d&apos;un <strong>{SITE.authorCredentials}</strong>.
             Fort d&apos;une expérience dans le secteur financier et d&apos;une connaissance approfondie du marché bancaire
-            marocain, Mottalib a créé cette plateforme pour répondre à un besoin réel : aider les Marocains à
+            marocain, Radif Partners a créé cette plateforme pour répondre à un besoin réel : aider les Marocains à
             s&apos;orienter dans l&apos;offre bancaire et trouver les meilleures conditions pour leurs projets financiers.
           </p>
 
