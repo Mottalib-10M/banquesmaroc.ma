@@ -69,8 +69,8 @@ export default function MentionsLegalesPage() {
 
           <h2>Cookies</h2>
           <p>
-            Ce site utilise des cookies techniques nécessaires à son fonctionnement. Il peut également utiliser
-            des cookies d&apos;analyse d&apos;audience anonymisés pour améliorer l&apos;expérience utilisateur.
+            Aucun cookie n&apos;est déposé par ce site, et aucun outil de mesure d&apos;audience ni traceur n&apos;y
+            est chargé. Le détail figure dans la politique de confidentialité.
           </p>
 
           <h2>Liens externes</h2>

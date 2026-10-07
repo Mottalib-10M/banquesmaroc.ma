@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "check:cookies": "python3 scripts/check-cookies.py .",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs"
   },
   "dependencies": {

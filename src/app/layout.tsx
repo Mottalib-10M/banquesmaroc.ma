@@ -82,11 +82,8 @@ export default function RootLayout({
         <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `setTimeout(function(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","CLARITY_ID")},3000);`,
-          }}
-        />
+        {/* Règle « sans cookie » (RECETTE §15.6) : aucun outil de mesure ni traceur. L'ancien
+            appel à Clarity visait un identifiant fictif (« CLARITY_ID ») : retiré, pas de projet. */}
       </body>
     </html>
   );

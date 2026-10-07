@@ -4,7 +4,7 @@ import { buildBreadcrumbSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité - Banques Maroc en 2026',
-  description: 'Politique de confidentialité de banquesmaroc.ma : aucune donnée personnelle collectée, simulations côté navigateur, pas de cookies de pistage commercial.',
+  description: 'Confidentialité de banquesmaroc.ma : aucun cookie, aucun traceur, aucune donnée personnelle enregistrée ; vos simulations de crédit restent dans votre navigateur.',
   alternates: { canonical: `${SITE.url}/confidentialite/` },
   robots: { index: false, follow: true },
 };
@@ -57,11 +57,11 @@ export default function ConfidentialitePage() {
 
           <h2>Cookies</h2>
 
-          <p>Banques Maroc n&apos;utilise aucun cookie de suivi publicitaire ou de pistage commercial. Le site peut utiliser des cookies techniques strictement nécessaires au bon fonctionnement du site. Ces cookies ne contiennent aucune information personnelle identifiable.</p>
+          <p>Banques Maroc ne dépose aucun cookie sur votre appareil, ni technique, ni publicitaire, ni de mesure. Il n&apos;y a donc pas de bandeau : rien à accepter avant de comparer les banques ou de simuler un crédit. Les montants, durées et revenus que vous saisissez ne sont pas non plus gardés dans le navigateur une fois la page fermée.</p>
 
-          <h2>Outils d&apos;analyse</h2>
+          <h2>Mesure d&apos;audience</h2>
 
-          <p>Le site peut utiliser des outils d&apos;analyse d&apos;audience anonymes pour comprendre l&apos;utilisation du site et améliorer l&apos;expérience utilisateur. Ces outils collectent des données agrégées et anonymisées (pages visitées, durée de visite, type d&apos;appareil) sans permettre l&apos;identification d&apos;un utilisateur individuel. Aucune donnée financière ou personnelle n&apos;est collectée par ces outils.</p>
+          <p>Le site n&apos;utilise aucun outil de mesure d&apos;audience ni aucun traceur : pas de statistiques de visite, pas d&apos;enregistrement de session, pas de pixel publicitaire. Seuls subsistent les journaux techniques de l&apos;hébergeur (adresse IP, date, page demandée), conservés par lui pour la sécurité du service, et le message que vous nous envoyez si vous nous écrivez.</p>
 
           <h2>Liens externes</h2>
 
@@ -69,7 +69,7 @@ export default function ConfidentialitePage() {
 
           <h2>Droits des utilisateurs</h2>
 
-          <p>Puisque nous ne collectons aucune donnée personnelle, il n&apos;y a aucune donnée à consulter, modifier ou supprimer. Si vous avez des questions concernant votre vie privée sur notre site, contactez-nous à : <a href={`mailto:${SITE.contact}`}>{SITE.contact}</a>.</p>
+          <p>Puisque nous ne collectons aucune donnée personnelle, il n&apos;y a aucune donnée à consulter, modifier ou supprimer, hormis les courriels que vous nous adressez. Pour toute question, écrivez-nous à : <a href={`mailto:${SITE.contact}`}>{SITE.contact}</a>. Vous pouvez aussi saisir la Commission nationale de contrôle de la protection des données à caractère personnel (CNDP, loi n° 09-08, www.cndp.ma).</p>
 
           <h2>Modifications de cette politique</h2>
 
@@ -79,7 +79,7 @@ export default function ConfidentialitePage() {
 
           <p>Pour toute question relative à cette politique de confidentialité, vous pouvez nous écrire à : <a href={`mailto:${SITE.contact}`}>{SITE.contact}</a>.</p>
 
-          <p className="text-sm text-gray-500 mt-8">Dernière mise à jour : juin 2026</p>
+          <p className="text-sm text-gray-500 mt-8">Dernière mise à jour : octobre 2026</p>
         </div>
       </div>
     </>
