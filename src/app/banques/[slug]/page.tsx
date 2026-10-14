@@ -60,8 +60,8 @@ export default async function BanquePage({ params }: PageProps) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       )}
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <nav className="text-sm text-gray-500 mb-6">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:pb-12">
+        <nav className="text-sm text-gray-500 mb-4">
           <a href="/" className="hover:text-brand">Accueil</a>
           <span className="mx-2">/</span>
           <a href="/comparateur-banques/" className="hover:text-brand">Banques</a>

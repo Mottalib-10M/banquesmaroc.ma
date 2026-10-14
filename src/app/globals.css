@@ -89,3 +89,19 @@ input[type="text"]::-webkit-inner-spin-button {
   background-color: var(--color-light-gray);
   font-weight: 600;
 }
+
+/* Liste déroulante : flèche dessinée à 12 px du bord, le texte long s'arrête avant (RECETTE §10.3).
+   Hors couche : l'emporte sur les classes px-3 / px-4 des composants. */
+select:not([multiple]):not([size]) {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 2.5rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none' stroke='%236b7280' stroke-width='1.8'%3E%3Cpath d='M5 7.5l5 5 5-5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem 1rem;
+}

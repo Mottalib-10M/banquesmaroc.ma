@@ -39,7 +39,7 @@ export default function ChampMontant({
       <label htmlFor={inputId} className="block text-sm font-medium text-charcoal mb-1">
         {label}
       </label>
-      <div className="relative">
+      <div className="relative self-start">
         <input
           type="text"
           inputMode="decimal"

@@ -28,7 +28,7 @@ export default function ActualitesHubPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 sm:pb-12">
         <nav className="text-sm text-gray-500 mb-6">
           <a href="/" className="hover:text-brand">Accueil</a>
           <span className="mx-2">/</span>
