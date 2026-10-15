@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
+import { dateLongue } from '@/lib/date';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -52,7 +53,7 @@ export default function MeilleureBanqueEtudiantPage() {
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Par {SITE.author} ({SITE.authorCredentials})</span>
-            <span>Mis a jour le 15 juin 2026</span>
+            <span>Mis à jour le <time dateTime="2026-06-15">{dateLongue('2026-06-15')}</time></span>
           </div>
         </header>
 

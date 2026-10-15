@@ -6,6 +6,9 @@ export const SITE = {
   author: 'Radif Partners',
   authorCredentials: 'Éditeur de calculateurs et de guides pratiques',
   contact: 'contact@banquesmaroc.ma',
+  // Date réelle de la dernière mise à jour des données (dernier commit de src/data), affichée en
+  // toutes lettres en pied de page (RECETTE §8.4).
+  lastUpdated: '2026-07-05',
   brandColor: '#1E40AF',
   locale: 'fr-MA',
   currency: 'MAD',

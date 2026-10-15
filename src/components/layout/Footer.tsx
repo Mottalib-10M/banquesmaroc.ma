@@ -1,4 +1,5 @@
 import { SITE } from '@/lib/config';
+import { dateLongue } from '@/lib/date';
 
 export default function Footer() {
   return (
@@ -84,6 +85,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} {SITE.name}. Tous droits réservés.
+              {' · '}Dernière mise à jour : <time dateTime={SITE.lastUpdated}>{dateLongue(SITE.lastUpdated)}</time>
             </p>
             <p className="text-xs text-gray-500">
               Par {SITE.author} ({SITE.authorCredentials}) &middot; {SITE.contact}

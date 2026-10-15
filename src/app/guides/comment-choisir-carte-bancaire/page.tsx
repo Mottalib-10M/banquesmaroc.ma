@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE } from '@/lib/config';
+import { dateLongue } from '@/lib/date';
 import { buildBreadcrumbSchema, buildArticleSchema, buildFAQSchema } from '@/lib/seo';
 
 export const metadata: Metadata = {
@@ -52,7 +53,7 @@ export default function CommentChoisirCartePage() {
           </h1>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>Par {SITE.author} ({SITE.authorCredentials})</span>
-            <span>Mis à jour le 1er juin 2026</span>
+            <span>Mis à jour le <time dateTime="2026-06-01">{dateLongue('2026-06-01')}</time></span>
           </div>
         </header>
 
