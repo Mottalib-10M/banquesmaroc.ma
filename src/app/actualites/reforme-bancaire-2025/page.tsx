@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 };
 
 const faqData = [
-  { question: 'Quel est le taux directeur de Bank Al-Maghrib en 2026 ?', answer: 'Bank Al-Maghrib a abaisse son taux directeur a 2,5% en mars 2026, apres une reduction de 25 points de base. Cette decision vise a soutenir la croissance economique tout en maintenant la stabilite des prix. Le taux etait a 2,75% fin 2025.' },
+  { question: 'Quel est le taux directeur de Bank Al-Maghrib en 2026 ?', answer: 'Le taux directeur de Bank Al-Maghrib est de 2,25% en 2026. Il a ete abaisse a 2,25% en mars 2025, puis maintenu a chaque reunion du Conseil depuis, la derniere le 22 septembre 2026. Bank Al-Maghrib prevoit une inflation de 0,7% en 2026 et de 1,5% en 2027.' },
   { question: 'Quelles banques proposent les meilleures applications mobiles au Maroc ?', answer: 'CIH Bank, Attijariwafa Bank et Bank of Africa sont les leaders du mobile banking au Maroc en 2026. CIH Bank se distingue avec l\'ouverture de compte 100% en ligne, le paiement par QR code et les virements instantanes. Attijariwafa Bank propose l\'appli la plus complete avec plus de 200 fonctionnalites.' },
-  { question: 'Comment la reforme bancaire 2026 affecte les taux de credit immobilier ?', answer: 'La baisse du taux directeur a 2,5% se repercute progressivement sur les taux de credit immobilier. En 2026, les meilleurs taux fixes demarrent a 4,25% (CIH Bank, CFG Bank) contre 4,50% fin 2025. Les taux variables beneficient egalement de cette baisse, rendant l\'achat immobilier plus accessible.' },
+  { question: 'Comment la reforme bancaire 2026 affecte les taux de credit immobilier ?', answer: 'Le taux directeur a 2,25% depuis mars 2025 se repercute progressivement sur les taux de credit immobilier. En 2026, les meilleurs taux fixes demarrent a 4,25% (CIH Bank, CFG Bank) contre 4,50% fin 2025. Les taux variables beneficient egalement de cette baisse, rendant l\'achat immobilier plus accessible.' },
   { question: 'Qu\'est-ce que le paiement mobile interoperable au Maroc ?', answer: 'Le paiement mobile interoperable, lance sous l\'egide de Bank Al-Maghrib, permet aux clients de toutes les banques de payer et transferer de l\'argent via leur telephone. Le systeme repose sur les wallets mobiles (M-Wallet) et le paiement par QR code. En 2026, plus de 8 millions de portefeuilles mobiles sont actifs au Maroc.' },
   { question: 'Quels changements reglementaires majeurs pour les banques en 2026 ?', answer: 'Les principaux changements en 2026 incluent : le renforcement des exigences de fonds propres (Bale III), l\'obligation de proposer un compte bancaire gratuit pour les populations vulnerables, la reglementation du mobile banking et des neo-banques, et la mise en place du registre national des credits pour mieux evaluer le risque d\'endettement.' },
 ];
@@ -61,7 +61,7 @@ export default function ReformeBancaire2025Page() {
         <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 mb-8">
           <h2 className="font-bold text-brand mb-2">En bref</h2>
           <ul className="text-sm text-gray-700 space-y-1">
-            <li><strong>Taux directeur :</strong> abaisse a 2,5% par Bank Al-Maghrib en mars 2026</li>
+            <li><strong>Taux directeur :</strong> 2,25% depuis mars 2025, maintenu par Bank Al-Maghrib le 22 septembre 2026</li>
             <li><strong>Credit immobilier :</strong> meilleurs taux des 4,25% (contre 4,50% en 2024)</li>
             <li><strong>Mobile banking :</strong> 8 millions de portefeuilles mobiles actifs</li>
             <li><strong>Paiement QR code :</strong> deploiement national en cours</li>
@@ -74,15 +74,15 @@ export default function ReformeBancaire2025Page() {
             L&apos;annee 2026 marque un tournant pour le secteur bancaire marocain. Entre la politique monetaire accommodante de Bank Al-Maghrib, l&apos;acceleration de la digitalisation des services et l&apos;essor du mobile banking, le paysage bancaire se transforme en profondeur. Cette reforme globale impacte directement les particuliers, les entreprises et l&apos;ensemble de l&apos;economie marocaine.
           </p>
 
-          <h2>Politique monetaire : Bank Al-Maghrib abaisse le taux directeur a 2,5%</h2>
+          <h2>Politique monetaire : le taux directeur de Bank Al-Maghrib maintenu a 2,25%</h2>
           <p>
-            Lors de son conseil du 18 mars 2026, Bank Al-Maghrib (BAM) a decide d&apos;abaisser son taux directeur de 25 points de base, le ramenant de 2,75% a 2,5%. Cette decision s&apos;inscrit dans un cycle d&apos;assouplissement monetaire entame en juin 2025, lorsque la banque centrale avait procede a une premiere baisse de 25 points de base, passant de 3% a 2,75%.
+            Bank Al-Maghrib (BAM) a abaisse son taux directeur en trois etapes de 25 points de base : de 3% a 2,75% en juin 2024, a 2,5% en decembre 2024, puis a 2,25% en mars 2025. Depuis, le Conseil l&apos;a maintenu a 2,25% a chaque reunion trimestrielle, la derniere le 22 septembre 2026.
           </p>
           <p>
-            Le gouverneur de BAM, Abdellatif Jouahri, a justifie cette decision par la deceleration de l&apos;inflation, revenue a 1,8% en glissement annuel en fevrier 2026, bien en dessous de la cible de 2%. La croissance economique, estimee a 3,4% pour 2026, beneficie de cette politique accommodante qui favorise l&apos;acces au credit pour les menages et les entreprises.
+            Dans son communique du 22 septembre 2026, le Conseil releve une inflation de 0,3% en moyenne sur les huit premiers mois de 2026 et prevoit 0,7% sur l&apos;ensemble de l&apos;annee 2026, puis 1,5% en 2027. Il justifie le statu quo par une incertitude tres elevee, liee notamment aux conflits et aux prix de l&apos;energie.
           </p>
           <p>
-            <strong>Impact pour les particuliers :</strong> la baisse du taux directeur se repercute progressivement sur les taux debiteurs des banques. Les taux de credit immobilier ont deja commence a baisser, avec les meilleurs taux fixes desormais a 4,25% chez CIH Bank et CFG Bank. Les credits a la consommation beneficient egalement de cette tendance, meme si la baisse y est moins prononcee. Utilisez notre <a href="/simulation-credit-immobilier/">simulateur de credit immobilier</a> pour calculer vos mensualites aux nouveaux taux.
+            <strong>Impact pour les particuliers :</strong> la baisse du taux directeur se repercute progressivement sur les taux debiteurs des banques. Les meilleurs taux fixes affiches par les banques pour le credit immobilier partent d&apos;environ 4,25% pour les meilleurs profils, selon les grilles des banques. Les credits a la consommation beneficient egalement de cette tendance, meme si la baisse y est moins prononcee. Utilisez notre <a href="/simulation-credit-immobilier/">simulateur de credit immobilier</a> pour calculer vos mensualites aux nouveaux taux.
           </p>
 
           <h2>Digitalisation bancaire : les banques marocaines accelerent leur transformation</h2>

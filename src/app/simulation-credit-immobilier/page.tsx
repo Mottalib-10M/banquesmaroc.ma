@@ -3,6 +3,7 @@ import { SITE } from '@/lib/config';
 import { buildBreadcrumbSchema, buildWebApplicationSchema, buildFAQSchema } from '@/lib/seo';
 import SimulateurCredit from '@/components/simulateurs/SimulateurCredit';
 import RelatedTools from '@/components/ui/RelatedTools';
+import Bloc2027 from '@/components/ui/Bloc2027';
 
 export const metadata: Metadata = {
   title: 'Simulateur crédit immobilier Maroc - Calculez la mensualité',
@@ -30,6 +31,10 @@ const faqImmo = [
   {
     question: 'Peut-on renégocier son crédit immobilier au Maroc ?',
     answer: 'Oui, il est possible de renégocier son crédit immobilier au Maroc, soit auprès de sa banque actuelle, soit en faisant un rachat de crédit par une autre banque. Cette opération est intéressante si l\'écart de taux est d\'au moins 0,5 point et qu\'il reste plus de la moitié de la durée du prêt à rembourser.',
+  },
+  {
+    question: 'Quels seront les taux bancaires au Maroc en 2027 ?',
+    answer: 'Aucun taux 2027 n\'est fixé à l\'avance. Le taux directeur de Bank Al-Maghrib est de 2,25 % depuis mars 2025 (maintenu le 22 septembre 2026). Le Conseil de Bank Al-Maghrib se réunit chaque trimestre (mars, juin, septembre, décembre) et publie sa décision le jour même ; il prévoit une inflation de 1,5 % en 2027. Les banques fixent ensuite librement leurs taux de crédit. Nos simulateurs seront mis à jour après chaque décision.',
   },
 ];
 
@@ -108,6 +113,8 @@ export default function SimulationCreditImmobilierPage() {
             période de taux élevés si l&apos;on anticipe une baisse, mais comportent un risque de hausse.
           </p>
         </div>
+
+        <Bloc2027 />
 
         {/* FAQ */}
         <div className="mt-12">

@@ -4,6 +4,7 @@ import { buildFAQSchema, buildBreadcrumbSchema, buildWebApplicationSchema, build
 import { getBanquesSorted } from '@/data/banques';
 import { formatPourcent } from '@/lib/format';
 import RelatedTools from '@/components/ui/RelatedTools';
+import Bloc2027 from '@/components/ui/Bloc2027';
 
 export const metadata: Metadata = {
   title: 'Comparateur banques Maroc 2026 - Crédit, cartes et taux',
@@ -31,6 +32,10 @@ const faqData = [
   {
     question: 'Comment ouvrir un compte bancaire au Maroc ?',
     answer: "Pour ouvrir un compte au Maroc, vous avez besoin de votre CIN (Carte d'Identité Nationale), d'un justificatif de domicile récent et d'un justificatif de revenus. Plusieurs banques comme CIH Bank permettent désormais l'ouverture de compte en ligne.",
+  },
+  {
+    question: 'Quels seront les taux bancaires au Maroc en 2027 ?',
+    answer: 'Aucun taux 2027 n\'est fixé à l\'avance. Le taux directeur de Bank Al-Maghrib est de 2,25 % depuis mars 2025 (maintenu le 22 septembre 2026). Le Conseil de Bank Al-Maghrib se réunit chaque trimestre (mars, juin, septembre, décembre) et publie sa décision le jour même ; il prévoit une inflation de 1,5 % en 2027. Les banques fixent ensuite librement leurs taux de crédit. Nos simulateurs seront mis à jour après chaque décision.',
   },
 ];
 
@@ -336,6 +341,8 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><Bloc2027 /></div>
 
       {/* FAQ */}
       <section className="bg-light-gray">
